@@ -17,7 +17,7 @@ function App() {
 
       if (regex.test(caracter)) {
 
-        const letter = (uppercase || index === 0) & firstUpperCase ? caracter.toUpperCase() : caracter
+        const letter = ((uppercase || index === 0) & firstUpperCase) || (uppercase & !firstUpperCase)? caracter.toUpperCase() : caracter
         uppercase = false
         return letter
       }
