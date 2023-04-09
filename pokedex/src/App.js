@@ -1,11 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { URL_BASE } from "./constatnts/URL_BASE";
-import { BACKGOUND_TYPES } from "./constatnts/BACKGROUND_TYPES";
-import { TYPES_POKEMONS } from "./constatnts/TYPES_POKEMONS";
 import { GlobalStyle } from "./globalStyled";
 import { MainContainer } from "./components/Main/Main";
-
+import { URL_BASE } from "./constants/URL_BASE"
 
 function App() {
 
