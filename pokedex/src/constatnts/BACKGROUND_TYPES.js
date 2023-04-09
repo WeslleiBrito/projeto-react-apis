@@ -1,40 +1,21 @@
-import bug from '../assets/img/background-pokemons/bug.svg'
-import dark from '../assets/img/background-pokemons/dark.svg'
-import dragon from '../assets/img/background-pokemons/dragon.svg'
-import electric from '../assets/img/background-pokemons/electric.svg'
-import fighting from '../assets/img/background-pokemons/fighting.svg'
-import fire from '../assets/img/background-pokemons/fire.svg'
-import flying from '../assets/img/background-pokemons/flying.svg'
-import ghost from '../assets/img/background-pokemons/ghost.svg'
-import grass from '../assets/img/background-pokemons/grass.svg'
-import ground from '../assets/img/background-pokemons/ground.svg'
-import ice from '../assets/img/background-pokemons/ice.svg'
-import normal from '../assets/img/background-pokemons/normal.svg'
-import poison from '../assets/img/background-pokemons/poison.svg'
-import psychic from '../assets/img/background-pokemons/psychic.svg'
-import rock from '../assets/img/background-pokemons/rock.svg'
-import steel from '../assets/img/background-pokemons/steel.svg'
-import water from '../assets/img/background-pokemons/water.svg'
-import fairy from '../assets/img/background-pokemons/fairy.svg'
 
-
-export const BACKGOUND_TYPES = {
-    bug: bug,
-    dark: dark,
-    dragon: dragon,
-    electric: electric,
-    fighting: fighting,
-    fire: fire,
-    flying: flying,
-    ghost: ghost,
-    grass: grass,
-    ground: ground,
-    ice: ice,
-    normal: normal,
-    poison: poison,
-    psychic: psychic,
-    rock: rock,
-    steel: steel,
-    water: water,
-    fairy: fairy
+export const colorBackgroundTypes = {
+    bug: "#76A866",
+    dark: "#5A5048",
+    dragon: "#9C4CA7",
+    electric: "#F0E078",
+    fighting: "#D86048",
+    fire: "#EAAB7D",
+    flying: "#B0C0D8",
+    ghost: "#705898",
+    grass: "#729F92",
+    ground: "#C0A040",
+    ice: "#D8F0F8",
+    normal: "#BF9762",
+    poison: "#A050A0",
+    psychic: "#F078B0",
+    rock: "#B8A050",
+    steel: "#C0C0D8",
+    water: "#71C3FF",
+    fairy: "#F4BDC9"
 }
