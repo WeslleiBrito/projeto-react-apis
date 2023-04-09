@@ -1,5 +1,5 @@
-import { colorBackgroundTypes } from "../../constatnts/BACKGROUND_TYPES";
-import { iconsTypes, colorTypePokemons } from "../../constatnts/TYPES_POKEMONS";
+import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES";
+import { iconsTypes, colorTypePokemons } from "../../constants/TYPES_POKEMONS";
 import { Item } from "../CardItem/CardItem";
 import { List, Title, Main } from "./style";
 
