@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { URL_BASE } from "./constatnts/URL_BASE";
+import { BACKGOUND_TYPES } from "./constatnts/BACKGROUND_TYPES";
+import { TYPES_POKEMONS } from "./constatnts/TYPES_POKEMONS";
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
 
     return textClean.toString().replaceAll(",", "")
   }
+
 
   const getPokemon = async () => {
     try {
@@ -85,7 +88,22 @@ function App() {
 
   return (
     <>
-
+      <ul>
+        { pokemons.map((pokemon) => {
+          return <li key={pokemon.id}>
+            <h3>{pokemon.name}</h3>
+            <img src={pokemon.imagePokemonDefault} alt={`imagem do pokémon ${pokemon.name}`}/>
+            <img src={BACKGOUND_TYPES[pokemon.types[0]]}/>
+            <ul>
+              {pokemon.types.map((type) => {
+                return <li key={type}>
+                  <img src={TYPES_POKEMONS[type]} alt={`imagem do tipo ${type}`}/>
+                </li>
+              })}
+            </ul>
+          </li>
+        })}
+      </ul>
     </>
   );
 }

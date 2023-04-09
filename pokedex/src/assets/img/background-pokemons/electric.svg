@@ -5,7 +5,7 @@
 <defs>
 </defs>
 <g transform="matrix(1 0 0 1 220.5 105.5)" id="rect2"  >
-<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(160,80,160); fill-rule: evenodd; opacity: 1;"  x="-220" y="-105" rx="12" ry="12" width="440" height="210" />
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(240,224,120); fill-rule: evenodd; opacity: 1;"  x="-220" y="-105" rx="12" ry="12" width="440" height="210" />
 </g>
 <g transform="matrix(1 0 0 1 165.5 10)"  >
 <path style="stroke: rgb(184,160,80); stroke-width: 1; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"  transform=" translate(-166.5, -10)" d="M 166.499 10 L 166.501 10" stroke-linecap="round" />
