@@ -14,5 +14,8 @@ export const Title = styled.h1`
 `
 
 export const List = styled.ul`
-     
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    background-color: orangered;
 `

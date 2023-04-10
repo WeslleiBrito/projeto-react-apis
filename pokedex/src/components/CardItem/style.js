@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import pokeball from "../../assets/img/backgrounds/pokeball.svg"
 
 export const ItemPokemon = styled.li`
-    height: 25vh;
-    width: 30vw;
-    background-color: ${(props) => props.bgColor};
-    margin-bottom: 1vh;
+    flex-basis: calc(33.33% - 1vw);
+    height: 35vh;
+    width: 20vw;
+    background: url(${pokeball}) no-repeat, ${(props) => props.bgColor};
+    background-size: 40vh;
+    background-position: 120% 150%;
+    margin: 1vh;
+    border-radius: 1em;
 `
 
 export const IdPokemon = styled.p`

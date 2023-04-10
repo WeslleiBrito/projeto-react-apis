@@ -70,7 +70,17 @@ function App() {
         }
       })
 
-      setPokemons(pokemonsClear);
+      setPokemons(pokemonsClear.sort((a, b) => {
+        if(a.types[0] < b.types[0]){
+          return -1
+        }
+
+        if(a.types[0] > b.types[0]){
+          return 1
+        }
+        
+        return 0
+      }));
     } catch (error) {
       console.log(error.response);
     }
