@@ -32,7 +32,13 @@ export const ListTypes = styled.ul`
 `
 
 export const ItemType = styled.li`
-
+    background-image: url(${props => props.path});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    height: 10vh;
+    width: 7vw;
+    background-color: black;
 `
 
 const styleButtonDetails = styled.button`
