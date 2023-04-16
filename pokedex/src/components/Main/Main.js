@@ -13,13 +13,20 @@ export const MainContainer = (props) => {
             <Title>Todos Pokémons</Title>
             <List>
                 {pokemons.map((pokemon, index) =>{
-                    const bgColor = colorBackgroundTypes[pokemon.types[0]]
-                    const listIcons = pokemon.types.map((type) => {return iconsTypes[type]})
+                            const id = String(pokemon.id).padStart(2, "0")
+                            const namePokemon = pokemon.name
+                            const bgColor = colorBackgroundTypes[pokemon.types[0]]
+                            const listType = pokemon.types.map((type) => {
+                                return ({icon: iconsTypes[type], color: colorTypePokemons[type]})
+                            })
+                            const pathImagePokemon = pokemon.imagePokemonDefault
 
-                    return(
-                        <Item key={index} bgColor={bgColor} listIcons={listIcons}/>
+                            return(
+                                <Item key={index} bgColor={bgColor} listType={listType} pathImagePokemon={pathImagePokemon} id={id} namePokemon={namePokemon}/>
+                            )
+                        }
                     )
-                })}
+                }
             </List>
         </Main>
             

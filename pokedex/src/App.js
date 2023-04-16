@@ -34,7 +34,7 @@ function App() {
 
   const getPokemon = async () => {
     try {
-      const result = (await axios(`${URL_BASE}pokemon?offset=0&limit=40`)).data.results;
+      const result = (await axios(`${URL_BASE}pokemon?offset=0&limit=21`)).data.results;
       const pokemonUrls = result.map((item) => item.url);
 
       // Nessa etapa ele retorna uma lista com as promessas de que ele vai ter um resultado daquelas requisições
@@ -57,12 +57,7 @@ function App() {
           name: replaceText(item.name, true),
           types: item.types.map((itemTypes) => { return itemTypes.type.name }),
           imagePokemonDefault: item.sprites.other.dream_world.front_default,
-          secondImagesPokemons: {
-            frontMale: item.sprites.front_default,
-            frontFemale: item.sprites.front_female,
-            backMale: item.sprites.back_default,
-            backFemale: item.sprites.back_female
-          },
+          secondImagesPokemons: [item.sprites.front_default, item.sprites.back_default, item.sprites.front_female, item.sprites.back_female],
           moves: item.moves.slice(0, 10).map((itemMove) => { return replaceText(itemMove.move.name, true, true) }),
           baseStats: item.stats.map((statItem) => {
             return { [replaceText(statItem.stat.name)]: statItem.base_stat }
@@ -70,17 +65,8 @@ function App() {
         }
       })
 
-      setPokemons(pokemonsClear.sort((a, b) => {
-        if(a.types[0] < b.types[0]){
-          return -1
-        }
-
-        if(a.types[0] > b.types[0]){
-          return 1
-        }
-        
-        return 0
-      }));
+      setPokemons(pokemonsClear)
+     
     } catch (error) {
       console.log(error.response);
     }

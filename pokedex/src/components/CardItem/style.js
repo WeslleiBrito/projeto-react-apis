@@ -12,23 +12,22 @@ export const ItemPokemon = styled.li`
     border-radius: 1em;
 `
 
-export const IdPokemon = styled.p`
+export const IdPokemon = styled.h2`
+    font-size: 1rem
 `
 
-export const Name = styled.p`
+export const NamePokemon = styled.h1`
 `
 
-const styleImage = styled.img`
-`
-export const ImagePokemon = (props) => {
-    const {src, alt} = props
+export const ImagePokemon = styled.img`
 
-    return <styleImage src={src} alt={alt}/>
-}
+    height: 12vh;
+    width: 15vh;
+    
+`
 
 export const ListTypes = styled.ul`
     display: flex;
-    flex-direction: row-reverse;
 `
 
 export const ItemType = styled.li`
@@ -36,28 +35,15 @@ export const ItemType = styled.li`
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50% 50%;
-    height: 10vh;
-    width: 7vw;
-    background-color: black;
+    height: 6vh;
+    width: 6vw;
+   background-color: ${props => props.colorType}
 `
 
-const styleButtonDetails = styled.button`
+export const Details = styled.a`
 `
 
-export const ButtonDetails = (props) => {
-
-    const { id } = props
-
-    return <styleButtonDetails id={id}/>
-}
-
-
-const styleButtonCapture = styled.button`
+export const ButtonCapture = styled.button`
 `
 
-export const ButtonCapture = (props) => {
-    const { id } = props
-
-    return <styleButtonCapture id={id}/>
-}
 

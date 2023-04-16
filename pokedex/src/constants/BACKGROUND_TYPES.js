@@ -12,7 +12,7 @@ export const colorBackgroundTypes = {
     ground: "#C0A040",
     ice: "#D8F0F8",
     normal: "#BF9762",
-    poison: "#A050A0",
+    poison: "#B98FB9",
     psychic: "#F078B0",
     rock: "#B8A050",
     steel: "#C0C0D8",
