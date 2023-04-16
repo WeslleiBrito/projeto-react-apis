@@ -17,7 +17,7 @@ export const MainContainer = (props) => {
                             const namePokemon = pokemon.name
                             const bgColor = colorBackgroundTypes[pokemon.types[0]]
                             const listType = pokemon.types.map((type) => {
-                                return ({icon: iconsTypes[type], color: colorTypePokemons[type]})
+                                return ({icon: iconsTypes[type], color: colorTypePokemons[type], nameType: type})
                             })
                             const pathImagePokemon = pokemon.imagePokemonDefault
 

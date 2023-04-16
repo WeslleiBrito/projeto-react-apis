@@ -30,14 +30,13 @@ export const ListTypes = styled.ul`
     display: flex;
 `
 
+export const TypeIcon = styled.img`
+`
+
 export const ItemType = styled.li`
-    background-image: url(${props => props.path});
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 50% 50%;
     height: 6vh;
     width: 6vw;
-   background-color: ${props => props.colorType}
+    background-color: ${props => props.colorType}
 `
 
 export const Details = styled.a`

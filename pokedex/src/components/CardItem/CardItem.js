@@ -1,5 +1,6 @@
 
-import {ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture} from './style'
+import {ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon} from './style'
+import { replaceText } from '../../App'
 
 
 export const Item = (props) => {
@@ -12,7 +13,10 @@ export const Item = (props) => {
             <NamePokemon>{namePokemon}</NamePokemon>
             <ImagePokemon src={pathImagePokemon} alt='Imagem do Pokemon'/>
             <ListTypes>
-                {listType.map((item, index) => {return <ItemType key={index} path={item.icon} colorType={item.color}/>})}
+                {listType.map((item, index) => {return <ItemType key={index} path={item.icon} colorType={item.color}> 
+                <TypeIcon src={item.icon} alt={`Tipo ${item.nameType}`}/>
+                {replaceText(item.nameType, true)}
+                </ItemType>})}
             </ListTypes>
             <Details>Detalhes</Details>
             <ButtonCapture>Capturar!</ButtonCapture>

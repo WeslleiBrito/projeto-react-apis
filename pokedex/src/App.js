@@ -4,33 +4,32 @@ import { GlobalStyle } from "./globalStyled";
 import { MainContainer } from "./components/Main/Main";
 import { URL_BASE } from "./constants/URL_BASE"
 
+export const replaceText = (text, firstUpperCase, space) => {
+  const regex = /[a-z]/i
+  const textArray = text.split("")
+  let uppercase = false
+
+  const textClean = textArray.map((caracter, index) => {
+
+
+    if (regex.test(caracter)) {
+
+      const letter = ((uppercase || index === 0) & firstUpperCase) || (uppercase & !firstUpperCase)? caracter.toUpperCase() : caracter
+      uppercase = false
+      return letter
+    }
+
+    uppercase = true
+    return space ? " " : ""
+
+  })
+
+  return textClean.toString().replaceAll(",", "")
+}
+
 function App() {
 
   const [pokemons, setPokemons] = useState([])
-
-  const replaceText = (text, firstUpperCase, space) => {
-    const regex = /[a-z]/i
-    const textArray = text.split("")
-    let uppercase = false
-
-    const textClean = textArray.map((caracter, index) => {
-
-
-      if (regex.test(caracter)) {
-
-        const letter = ((uppercase || index === 0) & firstUpperCase) || (uppercase & !firstUpperCase)? caracter.toUpperCase() : caracter
-        uppercase = false
-        return letter
-      }
-
-      uppercase = true
-      return space ? " " : ""
-
-    })
-
-    return textClean.toString().replaceAll(",", "")
-  }
-
 
   const getPokemon = async () => {
     try {
