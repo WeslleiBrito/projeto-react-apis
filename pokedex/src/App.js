@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { GlobalStyle } from "./globalStyled";
 import { URL_BASE } from "./constants/URL_BASE";
 import { Router } from "./Routes/Router";
+import { Header } from "./components/Header/Header";
 
 export const replaceText = (text, firstUpperCase, space) => {
   const regex = /[a-z]/i
@@ -30,6 +31,11 @@ export const replaceText = (text, firstUpperCase, space) => {
 function App() {
 
   const [pokemons, setPokemons] = useState([])
+  const [page, setPage] = useState({
+    home: false,
+    pokeball: true,
+    details: false
+  })
 
   const getPokemon = async () => {
     try {
@@ -79,6 +85,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <Header page={page} />
       <Router pokemons={pokemons} />
     </>
   );
