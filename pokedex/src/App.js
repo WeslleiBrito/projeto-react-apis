@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { GlobalStyle } from "./globalStyled";
-import { MainContainer } from "./components/Main/Main";
-import { URL_BASE } from "./constants/URL_BASE"
+import { URL_BASE } from "./constants/URL_BASE";
+import { Router } from "./Routes/Router";
 
 export const replaceText = (text, firstUpperCase, space) => {
   const regex = /[a-z]/i
@@ -14,7 +14,7 @@ export const replaceText = (text, firstUpperCase, space) => {
 
     if (regex.test(caracter)) {
 
-      const letter = ((uppercase || index === 0) & firstUpperCase) || (uppercase & !firstUpperCase)? caracter.toUpperCase() : caracter
+      const letter = ((uppercase || index === 0) & firstUpperCase) || (uppercase & !firstUpperCase) ? caracter.toUpperCase() : caracter
       uppercase = false
       return letter
     }
@@ -33,22 +33,22 @@ function App() {
 
   const getPokemon = async () => {
     try {
-      const result = (await axios(`${URL_BASE}pokemon?offset=0&limit=21`)).data.results;
-      const pokemonUrls = result.map((item) => item.url);
+      const result = (await axios(`${URL_BASE}pokemon?offset=0&limit=21`)).data.results
+      const pokemonUrls = result.map((item) => item.url)
 
       // Nessa etapa ele retorna uma lista com as promessas de que ele vai ter um resultado daquelas requisições
       const pokemonPromises = pokemonUrls.map(async (url) => {
         try {
-          const pokemon = await axios(url);
-          return pokemon.data;
+          const pokemon = await axios(url)
+          return pokemon.data
         } catch (error) {
-          console.log(error.response);
+          console.log(error.response)
         }
       });
       /* Nessa etapa a função promise.all aguarda que todas as promessas sejam resulvida
        e ai sim retorna a lista com os resultados, tanto positivo, como negativo*/
 
-      const pokemonResults = await Promise.all(pokemonPromises);
+      const pokemonResults = await Promise.all(pokemonPromises)
 
       const pokemonsClear = pokemonResults.map((item) => {
         return {
@@ -65,9 +65,9 @@ function App() {
       })
 
       setPokemons(pokemonsClear)
-     
+
     } catch (error) {
-      console.log(error.response);
+      console.log(error.response)
     }
   };
 
@@ -78,8 +78,8 @@ function App() {
 
   return (
     <>
-        <GlobalStyle/>
-        <MainContainer pokemons={pokemons}/>
+      <GlobalStyle />
+      <Router pokemons={pokemons} />
     </>
   );
 }
