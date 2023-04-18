@@ -4,6 +4,7 @@ import { GlobalStyle } from "./globalStyled";
 import { URL_BASE } from "./constants/URL_BASE";
 import { Router } from "./Routes/Router";
 import { Header } from "./components/Header/Header";
+import { useFechtPokemons } from "./hooks/useFetchPokemons";
 
 export const replaceText = (text, firstUpperCase, space) => {
   const regex = /[a-z]/i
@@ -81,7 +82,7 @@ function App() {
     getPokemon()
   }, [])
 
-
+  console.log(useFechtPokemons())
   return (
     <>
       <GlobalStyle />
