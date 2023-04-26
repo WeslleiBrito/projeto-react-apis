@@ -2,10 +2,14 @@ import { colorBackgroundTypes } from "../constants/BACKGROUND_TYPES";
 import { iconsTypes, colorTypePokemons } from "../constants/TYPES_POKEMONS";
 import { Item } from "../components/CardItem/CardItem";
 import { List, Title, Main } from "../styles/styleMain";
+import { PokemonsContext } from "../contexts/PokemonsContext";
+import { useContext } from "react";
 
 
 export const MainContainer = (props) => {
-    const { pokemons } = props
+    const context = useContext(PokemonsContext)
+    const { pokemons } = context
+
     console.log(pokemons)
 
     return (
