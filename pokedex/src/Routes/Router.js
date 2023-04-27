@@ -1,6 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { MainContainer } from '../pages/Main'
+import { HomePage } from '../pages/HomePage'
 
 
 export const Router = () => {
@@ -8,7 +8,7 @@ export const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route index element={<MainContainer />} />
+                <Route index element={<HomePage />} />
             </Routes>
         </BrowserRouter>
     )
