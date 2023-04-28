@@ -20,7 +20,7 @@ export const HomePage = () => {
                 <Title>Todos Pokémons</Title>
                 <List>
                     {pokemons.map((pokemon, index) => {
-                        const id = String(pokemon.id).padStart(2, "0")
+                        const id = pokemon.id
                         const namePokemon = pokemon.name
                         const bgColor = colorBackgroundTypes[pokemon.types[0]]
                         const listType = pokemon.types.map((type) => {

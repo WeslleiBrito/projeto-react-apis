@@ -7,6 +7,7 @@ export const GlobalState = (props) => {
     const initial = useFechtPokemons().pokemons
 
     const [pokemons, setPokemons] = useState([])
+    const [pokelist, setPokelist] = useState([])
 
     const [page, setPage] = useState("home")
 
@@ -14,7 +15,9 @@ export const GlobalState = (props) => {
         pokemons,
         setPokemons,
         page,
-        setPage
+        setPage,
+        pokelist,
+        setPokelist
     }
 
     useEffect(() => {
