@@ -2,7 +2,7 @@
 import { ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon } from './style'
 import { replaceText } from '../../App'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 export const Item = (props) => {
 
