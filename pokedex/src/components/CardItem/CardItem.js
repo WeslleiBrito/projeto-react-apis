@@ -4,12 +4,11 @@ import { replaceText } from '../../App'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 import { useContext } from 'react'
 
-export const Item = (props) => {
+export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) => {
 
     const context = useContext(PokemonsContext)
     const { pokemons, setPokemons, pokelist, setPokelist } = context
 
-    const { bgColor, listType, pathImagePokemon, id, namePokemon } = props
 
     const addToPokemonList = (id) => {
 
