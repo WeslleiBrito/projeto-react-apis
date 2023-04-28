@@ -5,17 +5,15 @@ import { List, Main, Title, } from "../styles/styleMain";
 import { PokemonsContext } from "../contexts/PokemonsContext";
 import { useContext } from "react";
 import { Header } from "../components/Header/Header";
-
+import { Loading } from "../components/Loading/Loading";
 
 export const HomePage = () => {
 
     const context = useContext(PokemonsContext)
-    const { pokemons } = context
+    const { pokemons, loading } = context
 
-    return (
-        <>
-            <Header />
-
+    const MainPokemons = () => {
+        return(
             <Main>
                 <Title>Todos Pokémons</Title>
                 <List>
@@ -36,6 +34,13 @@ export const HomePage = () => {
                     }
                 </List>
             </Main>
+        )
+    }
+
+    return (
+        <>
+            <Header />
+            {loading ? <Loading/>: MainPokemons()}
         </>
 
 

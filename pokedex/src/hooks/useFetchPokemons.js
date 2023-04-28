@@ -4,7 +4,8 @@ import { URL_BASE } from '../constants/URL_BASE';
 import { replaceText } from '../App';
 
 export const useFechtPokemons = (path) => {
-    const [pokemons, setPokemons] = useState([])
+    const [responseListPokemons, setResponseListPokemons] = useState([])
+    const [ loading, setLoading] = useState(true)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -44,7 +45,7 @@ export const useFechtPokemons = (path) => {
                     
                 }              
 
-                setPokemons(listPokemons.map((item) => {
+                setResponseListPokemons(listPokemons.map((item) => {
                     return {
                       id: item.id,
                       name: replaceText(item.name, true),
@@ -57,7 +58,7 @@ export const useFechtPokemons = (path) => {
                       })
                     }
                   }))
-
+                  setLoading(false)
             } catch (error) {
                 console.error(error.response);
             }
@@ -66,7 +67,7 @@ export const useFechtPokemons = (path) => {
         fetchData();
     }, [path]);
 
-    return {pokemons};
+    return {responseListPokemons, loading};
 }
 
 

@@ -1,14 +1,10 @@
 
 import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonPokeball, ButtonDelete } from "./style";
 import logo from "../../assets/img/logo/logo_pokemon.svg"
-import { PokemonsContext } from "../../contexts/PokemonsContext";
-import { useContext } from "react";
 
 
-export const Header = () => {
+export const Header = ({namePage}) => {
 
-    const context = useContext(PokemonsContext)
-    const { page } = context
 
     const config = {
 
@@ -42,7 +38,7 @@ export const Header = () => {
 
     return (
         <HeaderContainer>
-            {config[page]}
+            {config[namePage ? namePage : "home"]}
         </HeaderContainer>
     )
 }

@@ -4,11 +4,11 @@ import { PokemonsContext } from "./PokemonsContext"
 
 export const GlobalState = (props) => {
 
-    const initial = useFechtPokemons().pokemons
-
+    const {responseListPokemons, loading} = useFechtPokemons()
+ 
     const [pokemons, setPokemons] = useState([])
     const [pokelist, setPokelist] = useState([])
-
+    
     const [page, setPage] = useState("home")
 
     const context = {
@@ -17,12 +17,13 @@ export const GlobalState = (props) => {
         page,
         setPage,
         pokelist,
-        setPokelist
+        setPokelist, 
+        loading
     }
 
     useEffect(() => {
-        setPokemons(initial)
-    }, [initial])
+        setPokemons(responseListPokemons)
+    }, [responseListPokemons])
 
     return (
         <PokemonsContext.Provider value={context}>
