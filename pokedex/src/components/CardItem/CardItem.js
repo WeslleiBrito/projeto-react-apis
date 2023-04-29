@@ -3,6 +3,7 @@ import { ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon,
 import { replaceText } from '../../App'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 import { useContext } from 'react'
+import { useEffect } from 'react'
 
 export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) => {
 
@@ -17,8 +18,13 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
 
         setPokelist([...pokelist, newItemPokelist])
         setPokemons(newListPokemons)
+
     }
 
+    useEffect(() => {
+        console.log(pokelist)
+        localStorage.setItem("pokemons", pokelist)
+    }, [pokelist])
 
     return (
         <ItemPokemon bgColor={bgColor}>
