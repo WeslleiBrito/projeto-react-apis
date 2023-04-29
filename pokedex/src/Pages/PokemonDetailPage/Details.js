@@ -1,4 +1,4 @@
-import { DetailsContainer } from "../styles/styleDetails";
+import { DetailsContainer } from "./styleDetails";
 
 export const Details = () => {
 

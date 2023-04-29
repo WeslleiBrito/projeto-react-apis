@@ -1,7 +1,7 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { HomePage } from '../pages/HomePage'
-
+import { HomePage } from '../Pages/PokemonListPage/HomePage'
+import { Details } from '../Pages/PokemonDetailPage/Details'
 
 export const Router = () => {
 
@@ -9,6 +9,7 @@ export const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route index element={<HomePage />} />
+                <Route path='/details' element={<Details/>}/>
             </Routes>
         </BrowserRouter>
     )

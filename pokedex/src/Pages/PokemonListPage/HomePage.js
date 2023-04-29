@@ -1,11 +1,11 @@
-import { colorBackgroundTypes } from "../constants/BACKGROUND_TYPES";
-import { iconsTypes, colorTypePokemons } from "../constants/TYPES_POKEMONS";
-import { Item } from "../components/CardItem/CardItem";
-import { List, Main, Title, } from "../styles/styleMain";
-import { PokemonsContext } from "../contexts/PokemonsContext";
+import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES";
+import { iconsTypes, colorTypePokemons } from "../../constants/TYPES_POKEMONS";
+import { Item } from "../../components/PokemonCard/PokemonCard";
+import { List, Main, Title, } from "./styleHomePage";
+import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useContext } from "react";
-import { Header } from "../components/Header/Header";
-import { Loading } from "../components/Loading/Loading";
+import { Header } from "../../components/Header/Header";
+import { Loading } from "../../components/Loading/Loading";
 
 export const HomePage = () => {
 

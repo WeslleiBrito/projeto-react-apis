@@ -3,15 +3,19 @@ import { ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon,
 import { replaceText } from '../../App'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 import { useContext } from 'react'
-import { useEffect } from 'react'
+import { goDetails } from "../../Routes/coordinator"
+import { useNavigate } from 'react-router-dom'
+
 
 export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) => {
+
+    const navigate = useNavigate()
 
     const context = useContext(PokemonsContext)
     const { pokemons, setPokemons, pokelist, setPokelist } = context
 
 
-    const addToPokemonList = (id) => {
+    const addToPokeList = (id) => {
 
         const newItemPokelist = pokemons.filter((item) => { return item.id === id })[0]
         const newListPokemons = pokemons.filter((item) => { return item.id !== id })
@@ -19,13 +23,11 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
         setPokelist([...pokelist, newItemPokelist])
         setPokemons(newListPokemons)
 
+        localStorage.setItem("pokelist", JSON.stringify([...pokelist, newItemPokelist]))
+     
     }
 
-    useEffect(() => {
-        console.log(pokelist)
-        localStorage.setItem("pokemons", pokelist)
-    }, [pokelist])
-
+  
     return (
         <ItemPokemon bgColor={bgColor}>
             <IdPokemon>{`#${String(id).padStart(2, "0")}`}</IdPokemon>
@@ -39,8 +41,8 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
                     </ItemType>
                 })}
             </ListTypes>
-            <Details href='#'>Detalhes</Details>
-            <ButtonCapture onClick={() => addToPokemonList(id)}>Capturar!</ButtonCapture>
+            <Details onClick={() => goDetails(navigate)}>Detalhes</Details>
+            <ButtonCapture onClick={() => addToPokeList(id)}>Capturar!</ButtonCapture>
         </ItemPokemon>
     )
 }

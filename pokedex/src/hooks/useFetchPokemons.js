@@ -4,7 +4,7 @@ import { URL_BASE } from '../constants/URL_BASE';
 import { replaceText } from '../App';
 
 export const useFechtPokemons = (path) => {
-    const [responseListPokemons, setResponseListPokemons] = useState([])
+    const [initial, setResponseListPokemons] = useState([])
     const [ loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -67,7 +67,7 @@ export const useFechtPokemons = (path) => {
         fetchData();
     }, [path]);
 
-    return {responseListPokemons, loading};
+    return {initial, loading};
 }
 
 

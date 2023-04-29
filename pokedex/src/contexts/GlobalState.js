@@ -4,11 +4,11 @@ import { PokemonsContext } from "./PokemonsContext"
 
 export const GlobalState = (props) => {
 
-    const { responseListPokemons, loading } = useFechtPokemons()
-
+    const {initial, loading} = useFechtPokemons()
+ 
     const [pokemons, setPokemons] = useState([])
     const [pokelist, setPokelist] = useState([])
-
+    
     const [page, setPage] = useState("home")
 
     const context = {
@@ -17,20 +17,26 @@ export const GlobalState = (props) => {
         page,
         setPage,
         pokelist,
-        setPokelist,
+        setPokelist, 
         loading
     }
 
     useEffect(() => {
-        if (localStorage.getItem("pokemons")) {
-            const local = JSON.parse(localStorage.getItem("pokemons"))
-            const idLocal = local.map((item) => { return item.id })
 
-            const newListPokemons = !responseListPokemons.includes(idLocal)
-            console.log(newListPokemons)
+        if(window.localStorage.getItem("pokelist")){
+
+            const valueLocal = JSON.parse(window.localStorage.getItem("pokelist"))
+            const idLocal = valueLocal.map((item) => {return item.id})
+            const newInitial = initial.filter((item) => {return !idLocal.includes(item.id)})
+
+            setPokelist(JSON.parse(window.localStorage.getItem("pokelist")))
+            setPokemons(newInitial)
+            
+        }else{
+            setPokemons(initial)
         }
-        setPokemons(responseListPokemons)
-    }, [responseListPokemons])
+
+    }, [initial])
 
     return (
         <PokemonsContext.Provider value={context}>
