@@ -1,6 +1,6 @@
 
 import { ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon } from './style'
-import { replaceText } from '../../App'
+import { replaceText } from '../../tools/replaceText'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 import { useContext } from 'react'
 import { goDetails } from "../../Routes/coordinator"
@@ -12,20 +12,7 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
     const navigate = useNavigate()
 
     const context = useContext(PokemonsContext)
-    const { pokemons, setPokemons, pokelist, setPokelist } = context
-
-
-    const addToPokeList = (id) => {
-
-        const newItemPokelist = pokemons.filter((item) => { return item.id === id })[0]
-        const newListPokemons = pokemons.filter((item) => { return item.id !== id })
-
-        setPokelist([...pokelist, newItemPokelist])
-        setPokemons(newListPokemons)
-
-        localStorage.setItem("pokelist", JSON.stringify([...pokelist, newItemPokelist]))
-     
-    }
+    const { addToPokeList } = context
 
   
     return (

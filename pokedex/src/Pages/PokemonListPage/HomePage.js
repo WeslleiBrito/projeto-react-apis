@@ -7,10 +7,12 @@ import { useContext } from "react";
 import { Header } from "../../components/Header/Header";
 import { Loading } from "../../components/Loading/Loading";
 
+
 export const HomePage = () => {
 
     const context = useContext(PokemonsContext)
     const { pokemons, loading } = context
+   
 
     const MainPokemons = () => {
         return(

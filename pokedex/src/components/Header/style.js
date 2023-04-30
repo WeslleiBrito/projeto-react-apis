@@ -22,3 +22,4 @@ export const ButtonPokeball = styled.button`
 export const ButtonDelete = styled.button`
     
 `
+export const ButtonAddPokelist = styled.button``

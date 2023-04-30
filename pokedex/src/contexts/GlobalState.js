@@ -11,6 +11,34 @@ export const GlobalState = (props) => {
     
     const [page, setPage] = useState("home")
 
+    const addToPokeList = (id) => {
+        const newItemPokelist = pokemons.filter((item) => {  return item.id === Number(id) })[0]
+        const newListPokemons = pokemons.filter((item) => { return item.id !== Number(id) })
+
+        setPokelist([...pokelist, newItemPokelist])
+        setPokemons(newListPokemons)
+
+        localStorage.setItem("pokelist", JSON.stringify([...pokelist, newItemPokelist]))
+     
+    }
+
+    const removeToPokelist = (id) => {
+        const newPokemon = pokelist.filter((item) => { return item.id === Number(id) })[0]
+        const newItemPokelist = pokelist.filter((item) => { return item.id !== Number(id) })
+        setPokelist(newItemPokelist)
+        setPokemons([...pokemons, newPokemon].sort((a, b) => {
+            if (a.id < b.id) {
+                return -1;
+              }
+              if (a.id > b.id) {
+                return 1;
+              }
+              return 0;
+        }))
+
+        localStorage.setItem("pokelist", JSON.stringify(newItemPokelist))
+    }
+
     const context = {
         pokemons,
         setPokemons,
@@ -18,7 +46,9 @@ export const GlobalState = (props) => {
         setPage,
         pokelist,
         setPokelist, 
-        loading
+        loading, 
+        addToPokeList, 
+        removeToPokelist
     }
 
     useEffect(() => {

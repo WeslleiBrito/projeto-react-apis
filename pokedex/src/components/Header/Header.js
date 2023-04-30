@@ -1,10 +1,25 @@
 
-import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonPokeball, ButtonDelete } from "./style";
+import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonPokeball, ButtonDelete, ButtonAddPokelist } from "./style";
 import logo from "../../assets/img/logo/logo_pokemon.svg"
+import { useContext } from "react";
+import { PokemonsContext } from "../../contexts/PokemonsContext";
+import { useState } from "react";
 
 
-export const Header = ({namePage}) => {
+export const Header = ({namePage, itemInPokelist, idItem}) => {
 
+
+    const context = useContext(PokemonsContext)
+    const {addToPokeList, removeToPokelist} = context
+
+    const [idInpokelist, setIdInPokelist] = useState(itemInPokelist)
+
+    const changeIdInPokelist = () => {
+        setIdInPokelist(!idInpokelist)
+    }
+
+
+ 
 
     const config = {
 
@@ -29,7 +44,7 @@ export const Header = ({namePage}) => {
             <>
                 <TextAllPokemons>Todos Pokémons</TextAllPokemons>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
-                <ButtonDelete>Excluir da Pokédex</ButtonDelete>
+                {idInpokelist ? <ButtonDelete onClick={() => {removeToPokelist(idItem); changeIdInPokelist()}}>Excluir da Pokedex</ButtonDelete> : <ButtonAddPokelist onClick={() => {addToPokeList(idItem); changeIdInPokelist()}}>Adicionar a Pokedex</ButtonAddPokelist>}
             </>
         )
 

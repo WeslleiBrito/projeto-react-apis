@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { URL_BASE } from '../constants/URL_BASE';
-import { replaceText } from '../App';
+import { replaceText } from '../tools/replaceText';
 
 export const useFechtPokemons = (path) => {
     const [initial, setResponseListPokemons] = useState([])
@@ -53,9 +53,15 @@ export const useFechtPokemons = (path) => {
                       imagePokemonDefault: item.sprites.other.dream_world.front_default,
                       secondImagesPokemons: [item.sprites.front_default, item.sprites.back_default, item.sprites.front_female, item.sprites.back_female],
                       moves: item.moves.slice(0, 10).map((itemMove) => { return replaceText(itemMove.move.name, true, true) }),
-                      baseStats: item.stats.map((statItem) => {
-                        return { [replaceText(statItem.stat.name)]: statItem.base_stat }
-                      })
+    
+                      baseStats: {
+                        [item.stats[0].stat.name]: item.stats[0].base_stat,
+                        [item.stats[1].stat.name]: item.stats[1].base_stat,
+                        [item.stats[2].stat.name]: item.stats[2].base_stat,
+                        [item.stats[3].stat.name]: item.stats[3].base_stat,
+                        [item.stats[4].stat.name]: item.stats[4].base_stat,
+                        [item.stats[5].stat.name]: item.stats[5].base_stat,
+                    },
                     }
                   }))
                   setLoading(false)
