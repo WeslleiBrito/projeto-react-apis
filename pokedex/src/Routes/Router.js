@@ -9,7 +9,7 @@ export const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route index element={<HomePage />} />
-                <Route path='/details' element={<Details/>}/>
+                <Route path='/details/:id' element={<Details/>}/>
             </Routes>
         </BrowserRouter>
     )

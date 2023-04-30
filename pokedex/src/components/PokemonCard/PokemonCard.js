@@ -41,7 +41,7 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
                     </ItemType>
                 })}
             </ListTypes>
-            <Details onClick={() => goDetails(navigate)}>Detalhes</Details>
+            <Details onClick={() => goDetails(navigate, id)}>Detalhes</Details>
             <ButtonCapture onClick={() => addToPokeList(id)}>Capturar!</ButtonCapture>
         </ItemPokemon>
     )
