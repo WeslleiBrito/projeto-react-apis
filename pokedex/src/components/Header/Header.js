@@ -4,11 +4,13 @@ import logo from "../../assets/img/logo/logo_pokemon.svg"
 import { useContext } from "react";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useState } from "react";
+import { goPreviousPage } from "../../Routes/coordinator";
+import { useNavigate } from "react-router-dom";
 
 
 export const Header = ({namePage, itemInPokelist, idItem}) => {
 
-
+    const navigate = useNavigate()
     const context = useContext(PokemonsContext)
     const {addToPokeList, removeToPokelist} = context
 
@@ -18,8 +20,6 @@ export const Header = ({namePage, itemInPokelist, idItem}) => {
         setIdInPokelist(!idInpokelist)
     }
 
-
- 
 
     const config = {
 
@@ -33,7 +33,7 @@ export const Header = ({namePage, itemInPokelist, idItem}) => {
 
         pokedex: (
             <>
-                <TextAllPokemons>Todos Pokémons</TextAllPokemons>
+                <TextAllPokemons onClick={() => goPreviousPage(navigate)}>Todos Pokémons</TextAllPokemons>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
 
             </>
@@ -42,7 +42,7 @@ export const Header = ({namePage, itemInPokelist, idItem}) => {
 
         details: (
             <>
-                <TextAllPokemons>Todos Pokémons</TextAllPokemons>
+                <TextAllPokemons onClick={() => goPreviousPage(navigate)}>Todos Pokémons</TextAllPokemons>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
                 {idInpokelist ? <ButtonDelete onClick={() => {removeToPokelist(idItem); changeIdInPokelist()}}>Excluir da Pokedex</ButtonDelete> : <ButtonAddPokelist onClick={() => {addToPokeList(idItem); changeIdInPokelist()}}>Adicionar a Pokedex</ButtonAddPokelist>}
             </>
