@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Progress } from "@chakra-ui/react"
 
 
 export const DetailsContainer = styled.main`
@@ -46,3 +47,17 @@ export const ListMoves = styled.ul`
 
 export const ItemMoves = styled.li`
 `
+
+export const ProgressBaseStats = ({value, colorFinaly}) => {
+
+    return (<Progress margin={'2'} 
+    value={value} borderRadius={'0.2em'} 
+    size={'md'} 
+    maxW={"15vw"}
+    sx={{
+        "& > div": {
+          background: `linear-gradient(to right, #E8CDB5, ${colorFinaly})`,
+        },
+      }}
+    />)
+}

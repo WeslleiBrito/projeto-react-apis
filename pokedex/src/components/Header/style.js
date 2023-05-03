@@ -23,3 +23,4 @@ export const ButtonDelete = styled.button`
     
 `
 export const ButtonAddPokelist = styled.button``
+
