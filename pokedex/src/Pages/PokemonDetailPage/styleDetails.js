@@ -4,7 +4,7 @@ import { Progress } from "@chakra-ui/react"
 
 export const DetailsContainer = styled.main`
     
-` 
+`
 
 export const Text = styled.h1`
 `
@@ -48,16 +48,16 @@ export const ListMoves = styled.ul`
 export const ItemMoves = styled.li`
 `
 
-export const ProgressBaseStats = ({value, colorFinaly}) => {
+export const ProgressBaseStats = ({ value, gradient }) => {
 
-    return (<Progress margin={'2'} 
-    value={value} borderRadius={'0.2em'} 
-    size={'md'} 
+  return (<Progress margin={'2'}
+    value={value} borderRadius={'0.2em'}
+    size={'md'}
     maxW={"15vw"}
     sx={{
-        "& > div": {
-          background: `linear-gradient(to right, #E8CDB5, ${colorFinaly})`,
-        },
-      }}
-    />)
+      "& > div": {
+        background: `linear-gradient(to right, ${gradient})`,
+      },
+    }}
+  />)
 }
