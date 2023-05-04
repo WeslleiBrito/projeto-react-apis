@@ -28,12 +28,19 @@ export const ListBaseStats = styled.ul`
 `
 
 export const ItemBaseStats = styled.li`
+  width: 30vw;
+  display: flex;
+  justify-content: space-around;
+  background-color: rebeccapurple;
+
 `
 
 export const LableBaseStats = styled.p`
+  width: 8vw;
 `
 
 export const ValueBaseStats = styled.p`
+
 `
 
 export const AmountBaseStats = styled.p`
@@ -59,5 +66,6 @@ export const ProgressBaseStats = ({ value, gradient }) => {
         background: `linear-gradient(to right, ${gradient})`,
       },
     }}
+    style={{ width: "100%" }}
   />)
 }

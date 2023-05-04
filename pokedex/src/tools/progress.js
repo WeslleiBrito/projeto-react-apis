@@ -1,17 +1,37 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import React from "react";
 
-export const ProgressCalc = (endValue) => {
-    const [value, setValue] = useState(0)
+import { Progress as ChakraProgress } from '@chakra-ui/react';
 
-    useEffect(() => {
+export const Progress = ({ endValue, gradient }) => {
+    const [progress, setProgress] = useState(0);
+
+    const progressCalc = () => {
+
         const interval = setInterval(() => {
-            if (value < endValue) {
-                setValue(value + 1)
+            if (endValue > progress) {
+                setProgress(progress => progress + 1);
             }
-        }, 0.1)
 
-        return () => clearInterval(interval)
-    }, [value, endValue])
+        }, 0.1);
 
-    return (value)
+        return () => clearInterval(interval);
+    };
+
+    React.useEffect(progressCalc, [endValue, progress]);
+
+
+    return <ChakraProgress margin={'2'}
+        value={progress} borderRadius={'0.2em'}
+        size={'md'}
+        maxW={"15vw"}
+        sx={{
+            "& > div": {
+                background: `linear-gradient(to right, ${gradient})`,
+            },
+        }}
+        style={{ width: "100%" }}
+    />
 }
+
+
