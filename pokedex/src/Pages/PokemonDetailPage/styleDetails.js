@@ -28,19 +28,22 @@ export const ListBaseStats = styled.ul`
 `
 
 export const ItemBaseStats = styled.li`
-  width: 30vw;
+  width: 35vw;
   display: flex;
-  justify-content: space-around;
-  background-color: rebeccapurple;
+  align-items: center;
+  height: 5vh;
+  border-top: 1px solid #9EA3A3;
 
 `
 
 export const LableBaseStats = styled.p`
   width: 8vw;
+  text-align: end;
 `
 
 export const ValueBaseStats = styled.p`
-
+  text-align: end;
+  width: 5vw;
 `
 
 export const AmountBaseStats = styled.p`
@@ -61,11 +64,13 @@ export const ProgressBaseStats = ({ value, gradient }) => {
     value={value} borderRadius={'0.2em'}
     size={'md'}
     maxW={"15vw"}
+    width={"20vw"}
+    marginLeft={"2vw"}
     sx={{
       "& > div": {
         background: `linear-gradient(to right, ${gradient})`,
       },
     }}
-    style={{ width: "100%" }}
+    style={{ width: "100%", marginLeft: "2vh" }}
   />)
 }
