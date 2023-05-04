@@ -1,11 +1,12 @@
 
-import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonPokeball, ButtonDelete, ButtonAddPokelist } from "./style";
+import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonDelete, ButtonAddPokelist, ButtonTest } from "./style";
 import logo from "../../assets/img/logo/logo_pokemon.svg"
 import { useContext } from "react";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useState } from "react";
 import { goPreviousPage } from "../../Routes/coordinator";
 import { useNavigate } from "react-router-dom";
+
 
 
 export const Header = ({namePage, itemInPokelist, idItem}) => {
@@ -26,7 +27,7 @@ export const Header = ({namePage, itemInPokelist, idItem}) => {
         home: (
             <>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
-                <ButtonPokeball>Pokédex</ButtonPokeball>
+                <ButtonTest text={"Pokédex"}/>
             </>
 
         ),

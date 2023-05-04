@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Button } from "@chakra-ui/react";
 
 export const HeaderContainer = styled.header`
     height: 12vh;
@@ -22,5 +22,11 @@ export const ButtonPokeball = styled.button`
 export const ButtonDelete = styled.button`
     
 `
-export const ButtonAddPokelist = styled.button``
+export const ButtonAddPokelist = styled.button`
+`
+
+export const ButtonTest = ({text}) => {
+
+    return <Button bg={"#33A4F5"}>{text}</Button>
+}
 
