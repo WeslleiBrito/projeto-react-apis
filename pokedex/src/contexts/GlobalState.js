@@ -1,11 +1,14 @@
 import { useFechtPokemons } from "../hooks/useFetchPokemons"
 import { useState, useEffect } from "react"
 import { PokemonsContext } from "./PokemonsContext"
+import { searthPokemonID } from "../tools/searthPokemon"
+import { replaceText } from "../tools/replaceText"
+
 
 export const GlobalState = (props) => {
 
     const {initial, loading} = useFechtPokemons()
- 
+    
     const [pokemons, setPokemons] = useState([])
     const [pokelist, setPokelist] = useState([])
     
@@ -68,6 +71,40 @@ export const GlobalState = (props) => {
 
     }, [initial])
 
+    useEffect(() => {
+  
+        if(pokemons[pokemons.length - 1] && pokemons.length < 21){
+            let newPokemon
+            const lastId = pokemons[pokemons.length - 1].id
+
+            searthPokemonID(lastId < 21 ? 21 + 1 : lastId + 1, (pokemon) => {
+                newPokemon = {
+                    id: pokemon.id,
+                    name: replaceText(pokemon.name, true),
+                    types: pokemon.types.map((itemTypes) => { return itemTypes.type.name }),
+                    imagePokemonDefault: pokemon.sprites.other.dream_world.front_default,
+                    secondImagesPokemons: [pokemon.sprites.front_default, pokemon.sprites.back_default, pokemon.sprites.front_female, pokemon.sprites.back_female],
+                    moves: pokemon.moves.slice(0, 10).map((itemMove) => { return replaceText(itemMove.move.name, true, true) }),
+
+                    baseStats: [
+                        pokemon.stats[0].base_stat,
+                        pokemon.stats[1].base_stat,
+                        pokemon.stats[2].base_stat,
+                        pokemon.stats[3].base_stat,
+                        pokemon.stats[4].base_stat,
+                        pokemon.stats[5].base_stat,
+                    ],
+                }
+               
+                setPokemons([...pokemons, newPokemon])
+                });
+            
+            
+           
+        }
+        
+    }, [pokemons])
+  
     return (
         <PokemonsContext.Provider value={context}>
             {props.children}
