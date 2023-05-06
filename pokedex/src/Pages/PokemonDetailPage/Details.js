@@ -1,4 +1,4 @@
-import { DetailsContainer, ItemBaseStats, LableBaseStats, ListBaseStats } from "./styleDetails";
+import { DetailsContainer, ItemBaseStats, LableBaseStats, ListBaseStats, ListSecondImages, ItemSecondImage, SecondImage } from "./styleDetails";
 import { useParams } from "react-router-dom";
 import { useFechtPokemons } from "../../hooks/useFetchPokemons"
 import { Header } from '../../components/Header/Header'
@@ -21,35 +21,54 @@ export const Details = () => {
 
     const { initial, loading } = useFechtPokemons(`pokemon/${pathParams.id}`)
     let amount = 0
-
+    console.log(initial)
 
     const renderStats = () => {
 
         const subtitles = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed", "Total"]
 
         return (
-            <ListBaseStats>
-                {
-                    subtitles.map((title, index) => {
+            <DetailsContainer>
+                <ListSecondImages>
+                    {
+                        initial.secondImagesPokemons.map((url, index) => {
+                            if (url) {
+                                return (
+                                    <ItemSecondImage key={index}>
+                                        <SecondImage src={url} alt={`imagem do pokemon ${initial.name}`} />
+                                    </ItemSecondImage>
+                                )
+                            }
 
-                        const border = index === 3 || index === 4 ? "#DABD5A" : "#E06926"
-                        const colorProgress = index === 3 || index === 4 ? { colorInitial: [255, 247, 224], colorFinaly: [255, 222, 106] } : { colorInitial: [216, 193, 178], colorFinaly: [255, 124, 45] }
-                        if (title !== "Total") {
-                            amount += initial.baseStats[index]
-                        }
+                            return false
+
+                        })
+                    }
+                </ListSecondImages>
+
+                <ListBaseStats>
+                    {
+                        subtitles.map((title, index) => {
+
+                            const border = index === 3 || index === 4 ? "#DABD5A" : "#E06926"
+                            const colorProgress = index === 3 || index === 4 ? { colorInitial: [255, 247, 224], colorFinaly: [255, 222, 106] } : { colorInitial: [216, 193, 178], colorFinaly: [255, 124, 45] }
+                            if (title !== "Total") {
+                                amount += initial.baseStats[index]
+                            }
 
 
-                        return (
-                            <ItemBaseStats key={index}>
-                                <LableBaseStats>{title}</LableBaseStats>
-                                {initial.baseStats[index] > 0 ? <ValueState endValue={initial.baseStats[index]} /> : <ValueState endValue={amount} />}
-                                {initial.baseStats[index] > 0 ? <Progress endValue={initial.baseStats[index]} gradient={colorGradientFinaly({ multiplierFactor: initial.baseStats[index], colorInitial: colorProgress.colorInitial, colorFinaly: colorProgress.colorFinaly })} border={border} /> : false}
+                            return (
+                                <ItemBaseStats key={index}>
+                                    <LableBaseStats>{title}</LableBaseStats>
+                                    {initial.baseStats[index] > 0 ? <ValueState endValue={initial.baseStats[index]} /> : <ValueState endValue={amount} />}
+                                    {initial.baseStats[index] > 0 ? <Progress endValue={initial.baseStats[index]} gradient={colorGradientFinaly({ multiplierFactor: initial.baseStats[index], colorInitial: colorProgress.colorInitial, colorFinaly: colorProgress.colorFinaly })} border={border} /> : false}
 
-                            </ItemBaseStats>
-                        )
-                    })
-                }
-            </ListBaseStats>
+                                </ItemBaseStats>
+                            )
+                        })
+                    }
+                </ListBaseStats>
+            </DetailsContainer>
         )
 
     }
@@ -57,12 +76,7 @@ export const Details = () => {
     return (
         <>
             <Header namePage={"details"} itemInPokelist={verefyIdInPokelist ? true : false} idItem={pathParams.id} />
-
-            <DetailsContainer>
-
-                {!loading ? renderStats() : <></>}
-
-            </DetailsContainer>
+            {!loading ? renderStats() : <></>}
         </>
 
     )

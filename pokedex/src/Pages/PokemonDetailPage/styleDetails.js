@@ -23,7 +23,15 @@ export const SectionBaseStats = styled.section`
 
 export const Title = styled.h3`
 `
-
+export const ListSecondImages = styled.ul`
+  
+`
+export const ItemSecondImage = styled.li`
+  
+`
+export const SecondImage = styled.img`
+  
+`
 export const ListBaseStats = styled.ul`
 `
 
