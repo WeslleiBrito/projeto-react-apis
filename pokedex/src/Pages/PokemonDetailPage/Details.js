@@ -1,4 +1,5 @@
 import { DetailsContainer, ItemBaseStats, LableBaseStats, ListBaseStats, ListSecondImages, ItemSecondImage, SecondImage } from "./styleDetails";
+import { IdPokemon, NamePokemon } from "../../components/PokemonCard/style"
 import { useParams } from "react-router-dom";
 import { useFechtPokemons } from "../../hooks/useFetchPokemons"
 import { Header } from '../../components/Header/Header'
@@ -68,6 +69,11 @@ export const Details = () => {
                         })
                     }
                 </ListBaseStats>
+
+                <IdPokemon>{`#${String(initial.id).padStart(2, "0")}`}</IdPokemon>
+
+                <NamePokemon>{initial.name}</NamePokemon>
+
             </DetailsContainer>
         )
 
