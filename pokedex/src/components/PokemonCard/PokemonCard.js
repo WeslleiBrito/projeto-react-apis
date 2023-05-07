@@ -1,5 +1,5 @@
 
-import { ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon } from './style'
+import { ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon, NameType } from './style'
 import { replaceText } from '../../tools/replaceText'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 import { useContext } from 'react'
@@ -24,7 +24,7 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
                 {listType.map((item, index) => {
                     return <ItemType key={index} path={item.icon} colorType={item.color}>
                         <TypeIcon src={item.icon} alt={`Tipo ${item.nameType}`} />
-                        {replaceText(item.nameType, true)}
+                        <NameType>{replaceText(item.nameType, true)}</NameType>
                     </ItemType>
                 })}
             </ListTypes>

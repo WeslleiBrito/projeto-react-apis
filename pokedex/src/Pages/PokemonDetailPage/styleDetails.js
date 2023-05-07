@@ -82,3 +82,4 @@ export const ProgressBaseStats = ({ value, gradient }) => {
     style={{ width: "100%", marginLeft: "2vh" }}
   />)
 }
+

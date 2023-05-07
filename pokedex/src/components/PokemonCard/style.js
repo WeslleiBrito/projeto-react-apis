@@ -36,8 +36,14 @@ export const TypeIcon = styled.img`
 export const ItemType = styled.li`
     height: 6vh;
     width: 6vw;
-    background-color: ${props => props.colorType}
+    display: flex;
+    background-color: ${props => props.colorType};
+    border: 2px dashed;
+    border-radius: 0.5em;
 `
+
+export const NameType = styled.p``
+
 
 export const Details = styled.a`
 `

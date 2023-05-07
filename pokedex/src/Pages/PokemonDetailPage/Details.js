@@ -1,5 +1,5 @@
-import { DetailsContainer, ItemBaseStats, LableBaseStats, ListBaseStats, ListSecondImages, ItemSecondImage, SecondImage } from "./styleDetails";
-import { IdPokemon, NamePokemon } from "../../components/PokemonCard/style"
+import { DetailsContainer, ItemBaseStats, LableBaseStats, ListBaseStats, ListSecondImages, ItemSecondImage, SecondImage, ListMoves, ItemMoves } from "./styleDetails";
+import { IdPokemon, ImagePokemon, ItemType, ListTypes, NamePokemon, NameType, TypeIcon } from "../../components/PokemonCard/style"
 import { useParams } from "react-router-dom";
 import { useFechtPokemons } from "../../hooks/useFetchPokemons"
 import { Header } from '../../components/Header/Header'
@@ -8,6 +8,8 @@ import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { Progress } from "../../tools/progress"
 import { colorGradientFinaly } from "../../tools/colorGradiente";
 import { ValueState } from "../../tools/valueState";
+import { iconsTypes, colorTypePokemons } from "../../constants/TYPES_POKEMONS";
+import { replaceText } from "../../tools/replaceText";
 
 
 
@@ -74,6 +76,28 @@ export const Details = () => {
 
                 <NamePokemon>{initial.name}</NamePokemon>
 
+                <ListTypes>
+                    {
+                        initial.types.map((type, index) => {
+                            return(
+                                <ItemType key={index} colorType={colorTypePokemons[type]}>
+                                    <TypeIcon src={iconsTypes[type]}/>
+                                    <NameType>{replaceText(type, true)}</NameType>
+                                </ItemType>
+                            )
+                        })
+                    }
+                </ListTypes>
+                <ListMoves>
+                    {
+                        initial.moves.map((move, index) => {
+                            return(
+                                <ItemMoves key={index}>{move}</ItemMoves>
+                            )
+                        })
+                    }
+                </ListMoves>
+                <ImagePokemon src={initial.imagePokemonDefault}/>
             </DetailsContainer>
         )
 

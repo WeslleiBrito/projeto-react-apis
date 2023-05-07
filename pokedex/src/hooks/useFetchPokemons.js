@@ -51,7 +51,7 @@ export const useFechtPokemons = (path) => {
                         name: replaceText(item.name, true),
                         types: item.types.map((itemTypes) => { return itemTypes.type.name }),
                         imagePokemonDefault: item.sprites.other.dream_world.front_default,
-                        secondImagesPokemons: [item.sprites.front_default, item.sprites.back_default, item.sprites.front_female, item.sprites.back_female],
+                        secondImagesPokemons: [item.sprites.front_default, item.sprites.back_default],
                         moves: item.moves.slice(0, 10).map((itemMove) => { return replaceText(itemMove.move.name, true, true) }),
 
                         baseStats: [
