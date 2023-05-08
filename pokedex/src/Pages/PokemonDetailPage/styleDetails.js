@@ -1,11 +1,15 @@
 import styled from "styled-components"
-import { Progress } from "@chakra-ui/react"
-
+import { Progress, Heading } from "@chakra-ui/react"
+import pokeball from "../../assets/img/backgrounds/pokeball.svg"
 
 export const DetailsContainer = styled.main`
     
 `
-
+export const ImagePokemon = styled.img`
+  position: absolute;
+  width: 25vh;
+  height: 25vh;
+`
 export const Text = styled.h1`
 `
 
@@ -19,12 +23,19 @@ export const ImageSecond = styled.img`
 `
 
 export const SectionBaseStats = styled.section`
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+
 `
 
-export const Title = styled.h3`
-`
+export const Title = ({ title }) => {
+
+  return <Heading as="h2">{title}</Heading>
+}
+
 export const ListSecondImages = styled.ul`
-  
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
 `
 export const ItemSecondImage = styled.li`
   
@@ -54,6 +65,9 @@ export const ValueBaseStats = styled.p`
   width: 5vw;
 `
 
+export const Infos = styled.article`
+  
+`
 export const AmountBaseStats = styled.p`
 `
 
@@ -65,6 +79,17 @@ export const ListMoves = styled.ul`
 
 export const ItemMoves = styled.li`
 `
+export const CardDetalis = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr; 
+  grid-template-rows: 1fr 3fr;
+  width: 98%;
+  background: url(${pokeball}) no-repeat ${(props) => props.color};
+  background-size: 60vh;
+  background-position: center right;
+  position: relative;
+`
+
 
 export const ProgressBaseStats = ({ value, gradient }) => {
 

@@ -3,6 +3,7 @@ import React from "react";
 
 import { Progress as ChakraProgress } from '@chakra-ui/react';
 
+
 export const Progress = ({ endValue, gradient, border }) => {
     const [progress, setProgress] = useState(0);
     const maxModify = (((endValue + 10) - 100) / 100 * 15) + 15

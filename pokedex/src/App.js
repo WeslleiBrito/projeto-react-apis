@@ -1,5 +1,5 @@
 
-import {GlobalStyle} from "./globalStyled"
+import { GlobalStyle } from "./globalStyled"
 import { Router } from "./Routes/Router";
 import { GlobalState } from "./contexts/GlobalState";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -9,17 +9,17 @@ function App() {
 
 
   return (
-      <ChakraProvider resetCSS={true}>
+    <ChakraProvider>
 
-          <GlobalStyle/>
-          <GlobalState>
-            <Router />
-          </GlobalState>
+      <GlobalStyle />
+      <GlobalState>
+        <Router />
+      </GlobalState>
 
-        
-     </ChakraProvider>
 
-    
+    </ChakraProvider>
+
+
   );
 }
 
