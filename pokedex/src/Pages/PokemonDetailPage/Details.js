@@ -56,7 +56,7 @@ export const Details = () => {
         console.log(initial)
         return (
             <DetailsContainer>
-                <Title title={"Detalhes"} color={"#ffff"} />
+                <Title title={"Detalhes"} color={"#ffff"} padding={"7vh"}/>
                 <CardDetalis color={colorBackgroundTypes[initial.types[0]]}>
                     <ListSecondImages>
                         {

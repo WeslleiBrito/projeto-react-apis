@@ -27,10 +27,9 @@ export const Progress = ({ endValue, gradient, border }) => {
         size={'md'}
         maxW={"15vw"}
         bg={"transparent"}
-        marginLeft={"2.5vw"}
         textAlign={"start"}
-        width={"9vw"}
         height={'2vh'}
+        width={"15vw"}
         sx={{
             "& > div": {
                 background: `linear-gradient(to right, ${gradient})`,
