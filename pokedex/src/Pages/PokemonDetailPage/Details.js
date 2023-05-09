@@ -53,9 +53,10 @@ export const Details = () => {
     const renderStats = () => {
 
         const subtitles = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed", "Total"]
-        console.log(initial.types[0])
+        console.log(initial)
         return (
             <DetailsContainer>
+                <Title title={"Detalhes"} color={"#ffff"} />
                 <CardDetalis color={colorBackgroundTypes[initial.types[0]]}>
                     <ListSecondImages>
                         {

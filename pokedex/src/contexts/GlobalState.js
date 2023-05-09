@@ -96,7 +96,7 @@ export const GlobalState = (props) => {
                     id: pokemon.id,
                     name: replaceText(pokemon.name, true),
                     types: pokemon.types.map((itemTypes) => { return itemTypes.type.name }),
-                    imagePokemonDefault: pokemon.sprites.other.dream_world.front_default,
+                    imagePokemonDefault: pokemon.sprites.other["official-artwork"].front_default,
                     secondImagesPokemons: [pokemon.sprites.front_default, pokemon.sprites.back_default, pokemon.sprites.front_female, pokemon.sprites.back_female],
                     moves: pokemon.moves.slice(0, 10).map((itemMove) => { return replaceText(itemMove.move.name, true, true) }),
 

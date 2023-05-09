@@ -29,11 +29,11 @@ export const Progress = ({ endValue, gradient, border }) => {
         bg={"transparent"}
         marginLeft={"2.5vw"}
         textAlign={"start"}
-        height={'2.5vh'}
+        height={'2vh'}
         sx={{
             "& > div": {
                 background: `linear-gradient(to right, ${gradient})`,
-                borderRadius: "0.2em",
+                borderRadius: "0.3em",
                 border: "2px",
                 borderColor: `${border}`,
 
