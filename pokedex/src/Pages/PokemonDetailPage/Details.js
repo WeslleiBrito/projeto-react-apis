@@ -1,18 +1,18 @@
 import {
     DetailsContainer,
-    ItemBaseStats,
-    LableBaseStats,
-    ListBaseStats,
+    CardDetalis,
+    Title,
     ListSecondImages,
     ItemSecondImage,
     SecondImage,
+    SectionBaseStats,
+    ListBaseStats,
+    ItemBaseStats,
+    LableBaseStats,
+    Description,
+    SectionMoves,
     ListMoves,
     ItemMoves,
-    SectionBaseStats,
-    Infos,
-    Title,
-    SectionMoves,
-    CardDetalis,
     ImagePokemon
 } from "./styleDetails";
 
@@ -101,7 +101,7 @@ export const Details = () => {
                         </ListBaseStats>
                     </SectionBaseStats>
 
-                    <Infos>
+                    <Description>
                         <IdPokemon>{`#${String(initial.id).padStart(2, "0")}`}</IdPokemon>
 
                         <NamePokemon>{initial.name}</NamePokemon>
@@ -118,7 +118,7 @@ export const Details = () => {
                                 })
                             }
                         </ListTypes>
-                    </Infos>
+                    </Description>
 
                     <SectionMoves>
                         <Title title={"Moves:"} />
