@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Heading } from "@chakra-ui/react"
 import pokeball from "../../assets/img/backgrounds/pokeball.svg"
 
 export const DetailsContainer = styled.main`
@@ -8,19 +7,15 @@ export const DetailsContainer = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1vw;
     
 `
 
-export const Title = ({ title, color, padding }) => {
-
-  return <Heading as="h2" color={color} style={{ display: "flex", alignSelf: "flex-start", paddingTop: `${padding ? padding : "0"}`, paddingBottom: `${padding}` }}>{title}</Heading>
-}
 
 export const CardDetalis = styled.section`
   display: grid;
   grid-template-columns: 20vw 1fr 2fr; 
   grid-template-rows: 1fr 3fr;
-  width: 98%;
   height: 88vh;
   padding-top: 4vh;
   padding-bottom: 4vh;
@@ -103,7 +98,8 @@ export const ValueBaseStats = styled.p`
 `
 
 export const Description = styled.section`
-  background-color: bisque;
+  display: flex;
+  flex-direction: column;
   width: 15vw;
 `
 
@@ -112,7 +108,8 @@ export const SectionMoves = styled.section`
   grid-column: 3 / 4;
   grid-row: 2 / 3;
   width: 18vw;
-  height: 58.7vh;
+  height: 60vh;
+  padding: 2vh;
 
 `
 export const ListMoves = styled.ul`
@@ -123,10 +120,10 @@ export const ItemMoves = styled.li`
 
 export const ImagePokemon = styled.img`
   position: absolute;
-  height: 40vh;
-  width: 40vh;
+  height: 30vh;
+  width: 30vh;
   right: 4%;
-  top: -22%;
+  top: -16%;
 `
 
 

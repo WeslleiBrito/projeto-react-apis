@@ -1,7 +1,6 @@
 import {
     DetailsContainer,
     CardDetalis,
-    Title,
     ListSecondImages,
     ItemSecondImage,
     SecondImage,
@@ -35,6 +34,7 @@ import { ValueState } from "../../tools/valueState";
 import { iconsTypes, colorTypePokemons } from "../../constants/TYPES_POKEMONS";
 import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES";
 import { replaceText } from "../../tools/replaceText";
+import { Heading } from "@chakra-ui/react";
 
 
 
@@ -55,7 +55,7 @@ export const Details = () => {
         console.log(initial)
         return (
             <DetailsContainer>
-                <Title title={"Detalhes"} color={"#ffff"} padding={"7vh"} />
+                <Heading as="h2" color={"#ffff"} marginBottom={"7vh"} fontWeight="700">Detalhes</Heading>
                 <CardDetalis color={colorBackgroundTypes[initial.types[0]]}>
                     <ListSecondImages>
                         {
@@ -75,7 +75,7 @@ export const Details = () => {
                     </ListSecondImages>
 
                     <SectionBaseStats>
-                        <Title title={"Base stats"} />
+                        <Heading textAlign={"start"} width={'100%'} fontSize={"1.2rem"} fontWeight={"800"}>Base stats</Heading>
                         <ListBaseStats>
                             {
                                 subtitles.map((title, index) => {
@@ -102,9 +102,7 @@ export const Details = () => {
 
                     <Description>
                         <IdPokemon>{`#${String(initial.id).padStart(2, "0")}`}</IdPokemon>
-
-                        <Title title={initial.name} color={"#ffff"} />
-
+                        <Heading color={"#ffff"} marginBottom={"1vh"}>{initial.name}</Heading>
                         <ListTypes>
                             {
                                 initial.types.map((type, index) => {
@@ -120,7 +118,7 @@ export const Details = () => {
                     </Description>
 
                     <SectionMoves>
-                        <Title title={"Moves:"} />
+                        <Heading as="h2" fontSize={"1.2rem"} fontWeight={"800"}>Moves:</Heading>
                         <ListMoves>
                             {
                                 initial.moves.map((move, index) => {

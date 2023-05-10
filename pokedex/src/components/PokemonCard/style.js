@@ -13,7 +13,9 @@ export const ItemPokemon = styled.li`
 `
 
 export const IdPokemon = styled.h2`
-    font-size: 1rem
+    font-size: 1rem;
+    color: #ffff;
+    font-weight: 700;
 `
 
 export const NamePokemon = styled.h1`
@@ -28,25 +30,30 @@ export const ImagePokemon = styled.img`
 
 export const ListTypes = styled.ul`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 11vw;
 `
 
 export const TypeIcon = styled.img`
-    width: 2vw;
-    height: 2vw;
+    width: 1vw;
+    height: 1vw;
 `
 
 export const ItemType = styled.li`
-    height: 6.5vh;
-    width: 7vw;
+    height: 4vh;
+    width: 5vw;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: ${props => props.colorType};
-    border: 2px dashed;
+    border: 1px dashed #ffff;
     border-radius: 0.5em;
 `
 
-export const NameType = styled.p``
+export const NameType = styled.p`
+    font-size: 0.8em;
+`
 
 
 export const Details = styled.a`
