@@ -28,14 +28,18 @@ export const ImagePokemon = styled.img`
 
 export const ListTypes = styled.ul`
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 `
 
 export const TypeIcon = styled.img`
+    width: 2vw;
+    height: 2vw;
 `
 
 export const ItemType = styled.li`
-    height: 6vh;
-    width: 6vw;
+    height: 6.5vh;
+    width: 7vw;
     display: flex;
     background-color: ${props => props.colorType};
     border: 2px dashed;

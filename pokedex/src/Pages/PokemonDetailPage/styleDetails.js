@@ -13,7 +13,7 @@ export const DetailsContainer = styled.main`
 
 export const Title = ({ title, color, padding }) => {
 
-  return <Heading as="h2" color={color} style={{ display: "flex", alignSelf: "flex-start", paddingTop: `${padding}`, paddingBottom: `${padding}` }}>{title}</Heading>
+  return <Heading as="h2" color={color} style={{ display: "flex", alignSelf: "flex-start", paddingTop: `${padding ? padding : "0"}`, paddingBottom: `${padding}` }}>{title}</Heading>
 }
 
 export const CardDetalis = styled.section`
@@ -22,18 +22,17 @@ export const CardDetalis = styled.section`
   grid-template-rows: 1fr 3fr;
   width: 98%;
   height: 88vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
   padding-left: 4vh;
   background-color:  ${(props) => props.color};
   background-image: url(${pokeball});
   background-repeat: no-repeat;
   background-position: right;
   background-position-x: 119%;
-  background-size: 56.2%;
+  background-size: 58.5%;
   position: relative;
   align-self: center;
-  align-items: center;
 `
 export const ListSecondImages = styled.ul`
   grid-row: 1 / 3;
@@ -68,12 +67,13 @@ export const SectionBaseStats = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 6vw;
   
 `
 
 
 export const ListBaseStats = styled.ul`
-  width: 25vw;
+  width: 26vw;
   display: flex;
   flex-direction: column;
 
@@ -103,10 +103,16 @@ export const ValueBaseStats = styled.p`
 `
 
 export const Description = styled.section`
+  background-color: bisque;
+  width: 15vw;
 `
 
 export const SectionMoves = styled.section`
   background: #FFFFFF;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  width: 18vw;
+  height: 58.7vh;
 
 `
 export const ListMoves = styled.ul`

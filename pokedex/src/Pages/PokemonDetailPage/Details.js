@@ -20,7 +20,6 @@ import {
     IdPokemon,
     ItemType,
     ListTypes,
-    NamePokemon,
     NameType,
     TypeIcon
 } from "../../components/PokemonCard/style"
@@ -56,7 +55,7 @@ export const Details = () => {
         console.log(initial)
         return (
             <DetailsContainer>
-                <Title title={"Detalhes"} color={"#ffff"} padding={"7vh"}/>
+                <Title title={"Detalhes"} color={"#ffff"} padding={"7vh"} />
                 <CardDetalis color={colorBackgroundTypes[initial.types[0]]}>
                     <ListSecondImages>
                         {
@@ -104,7 +103,7 @@ export const Details = () => {
                     <Description>
                         <IdPokemon>{`#${String(initial.id).padStart(2, "0")}`}</IdPokemon>
 
-                        <NamePokemon>{initial.name}</NamePokemon>
+                        <Title title={initial.name} color={"#ffff"} />
 
                         <ListTypes>
                             {
