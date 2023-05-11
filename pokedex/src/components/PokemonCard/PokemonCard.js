@@ -1,5 +1,6 @@
 
-import { ItemPokemon, IdPokemon, NamePokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon, NameType } from './style'
+import { ItemPokemon, IdPokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon, NameType } from './style'
+import { Heading } from '@chakra-ui/react'
 import { replaceText } from '../../tools/replaceText'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
 import { useContext } from 'react'
@@ -14,11 +15,12 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
     const context = useContext(PokemonsContext)
     const { addToPokeList } = context
 
-  
+
     return (
         <ItemPokemon bgColor={bgColor}>
-            <IdPokemon>{`#${String(id).padStart(2, "0")}`}</IdPokemon>
-            <NamePokemon>{namePokemon}</NamePokemon>
+            <IdPokemon text={`#${String(id).padStart(2, "0")}`} />
+            {/* <Heading as={"h2"} color={"#ffff"} fontWeight={"700"}>{`#${String(id).padStart(2, "0")}`}</Heading> */}
+            <Heading as={"h2"} color={"#ffff"} fontWeight={"700"}>{namePokemon}</Heading>
             <ImagePokemon src={pathImagePokemon} alt='Imagem do Pokemon' />
             <ListTypes>
                 {listType.map((item, index) => {

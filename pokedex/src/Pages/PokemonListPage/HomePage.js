@@ -1,7 +1,7 @@
 import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES";
 import { iconsTypes, colorTypePokemons } from "../../constants/TYPES_POKEMONS";
 import { Item } from "../../components/PokemonCard/PokemonCard";
-import { List, Main, Title, } from "./styleHomePage";
+import { List, Main, TitleAllPokemons, } from "./styleHomePage";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useContext } from "react";
 import { Header } from "../../components/Header/Header";
@@ -12,12 +12,12 @@ export const HomePage = () => {
 
     const context = useContext(PokemonsContext)
     const { pokemons, loading } = context
-   
+
 
     const MainPokemons = () => {
-        return(
+        return (
             <Main>
-                <Title>Todos Pokémons</Title>
+                <TitleAllPokemons text={"Todos Pokémons"} />
                 <List>
                     {pokemons.map((pokemon, index) => {
                         const id = pokemon.id
@@ -42,7 +42,7 @@ export const HomePage = () => {
     return (
         <>
             <Header />
-            {loading ? <Loading/>: MainPokemons()}
+            {loading ? <Loading /> : MainPokemons()}
         </>
 
 

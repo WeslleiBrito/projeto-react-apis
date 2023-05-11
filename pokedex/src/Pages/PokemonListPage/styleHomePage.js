@@ -1,20 +1,28 @@
 import styled from "styled-components";
-
+import { Heading } from "@chakra-ui/react"
 
 export const Main = styled.main`
-    height: 150vh;
-    width: 100vw;
+    height: 320vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #5D5D5D;
+
    
-    
 `
 
-export const Title = styled.h1`
-`
+export const TitleAllPokemons = ({ text }) => {
+    return <Heading as={"h2"} fontSize={"2rem"} color={"#ffff"}>{text}</Heading>
+}
+
 
 export const List = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    row-gap: 8vh;
+    column-gap: 2vw;
     align-self: center;
+    margin-top: 10vh;
+    padding: 1vw;
 `

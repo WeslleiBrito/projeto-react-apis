@@ -101,7 +101,7 @@ export const Details = () => {
                     </SectionBaseStats>
 
                     <Description>
-                        <IdPokemon>{`#${String(initial.id).padStart(2, "0")}`}</IdPokemon>
+                        <IdPokemon text={`#${String(initial.id).padStart(2, "0")}`} />
                         <Heading color={"#ffff"} marginBottom={"1vh"}>{initial.name}</Heading>
                         <ListTypes>
                             {

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import pokeball from "../../assets/img/backgrounds/pokeball.svg"
 
+
 export const DetailsContainer = styled.main`
     background-color: #666666;
     height: 120vh;
@@ -113,7 +114,7 @@ export const SectionMoves = styled.section`
   grid-column: 3 / 4;
   grid-row: 2 / 3;
   width: 16vw;
-  height: 57.7vh;
+  height: 58vh;
   padding: 2vh;
   border-radius: 0.5em;
 `

@@ -1,31 +1,36 @@
 import styled from "styled-components";
 import pokeball from "../../assets/img/backgrounds/pokeball.svg"
+import { Heading } from "@chakra-ui/react";
 
 export const ItemPokemon = styled.li`
-    flex-basis: calc(33.33% - 1vw);
-    height: 35vh;
-    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 30vh;
+    width: 30vw;
     background: url(${pokeball}) no-repeat, ${(props) => props.bgColor};
-    background-size: 40vh;
-    background-position: 120% 150%;
-    margin: 1vh;
+    background-size: 37vh;
+    background-position-x: 14.8vw;
+    background-position-y: -3.5vw;
     border-radius: 1em;
+    padding: 2vh;
 `
 
-export const IdPokemon = styled.h2`
-    font-size: 1rem;
-    color: #ffff;
-    font-weight: 700;
-`
+export const IdPokemon = ({ text }) => {
+
+    return <Heading as={"h2"} fontSize={"1rem"} color={"#ffff"} fontWeight={"700"}>{text}</Heading>
+}
+
 
 export const NamePokemon = styled.h1`
 `
 
 export const ImagePokemon = styled.img`
-
-    height: 12vh;
-    width: 15vh;
-    
+    position: absolute;
+    height: 25vh;
+    width: 25vh;
+    top: -23%;
+    left: 58%;
 `
 
 export const ListTypes = styled.ul`
