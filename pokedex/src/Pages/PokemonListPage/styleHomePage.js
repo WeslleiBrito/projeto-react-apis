@@ -3,16 +3,15 @@ import { Heading } from "@chakra-ui/react"
 
 export const Main = styled.main`
     height: 320vh;
-    width: 100vw;
+    width: 99vw;
     display: flex;
     flex-direction: column;
     background-color: #5D5D5D;
-    padding-left: 2vh;
-    padding-right: 2vh;
+    padding: 2vh;
    
 `
 
-export const TitleAllPokemons = ({ text }) => {
+export const Title = ({ text }) => {
     return <Heading as={"h2"} fontSize={"2rem"} color={"#ffff"}>{text}</Heading>
 }
 

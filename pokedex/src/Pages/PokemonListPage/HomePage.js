@@ -1,7 +1,7 @@
 import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES";
 import { iconsTypes, colorTypePokemons } from "../../constants/TYPES_POKEMONS";
 import { Item } from "../../components/PokemonCard/PokemonCard";
-import { List, Main, TitleAllPokemons, } from "./styleHomePage";
+import { List, Main, Title, } from "./styleHomePage";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useContext } from "react";
 import { Header } from "../../components/Header/Header";
@@ -17,7 +17,7 @@ export const HomePage = () => {
     const MainPokemons = () => {
         return (
             <Main>
-                <TitleAllPokemons text={"Todos Pokémons"} />
+                <Title text={"Todos Pokémons"} />
                 <List>
                     {pokemons.map((pokemon, index) => {
                         const id = pokemon.id

@@ -1,5 +1,5 @@
 
-import { ItemPokemon, IdPokemon, ListTypes, ItemType, ImagePokemon, ButtonDetalis, ButtonCapture, TypeIcon, NameType, Actions } from './style'
+import { ItemPokemon, IdPokemon, ListTypes, ItemType, ImagePokemon, ButtonDetalis, ButtonCapture, ButtonRemove, TypeIcon, NameType, Actions } from './style'
 import { Heading } from '@chakra-ui/react'
 import { replaceText } from '../../tools/replaceText'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
@@ -8,12 +8,12 @@ import { goDetails } from "../../Routes/coordinator"
 import { useNavigate } from 'react-router-dom'
 
 
-export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) => {
+export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon, inPokelist }) => {
 
     const navigate = useNavigate()
 
     const context = useContext(PokemonsContext)
-    const { addToPokeList } = context
+    const { addToPokeList, removeToPokelist } = context
 
 
     return (
@@ -31,7 +31,8 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
             </ListTypes>
             <Actions>
                 <ButtonDetalis text={"Detalhes"} goDetalis={goDetails} navigate={navigate} id={id} />
-                <ButtonCapture text={"Capiturar!"} addToPokeList={addToPokeList} id={id} />
+                {!inPokelist && <ButtonCapture text={"Capiturar!"} addToPokeList={addToPokeList} id={id} />}
+                {inPokelist && <ButtonRemove text={"Excluir"} removeToPokelist={removeToPokelist} id={id} />}
             </Actions>
 
         </ItemPokemon>

@@ -25,8 +25,8 @@ export const ButtonDelete = styled.button`
 export const ButtonAddPokelist = styled.button`
 `
 
-export const ButtonTest = ({text}) => {
+export const ButtonPokedex = ({ text, goPokedex, navigate }) => {
 
-    return <Button bg={"#33A4F5"}>{text}</Button>
+    return <Button bg={"#33A4F5"} onClick={() => { goPokedex(navigate) }}>{text}</Button>
 }
 

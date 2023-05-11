@@ -1,19 +1,19 @@
 
-import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonDelete, ButtonAddPokelist, ButtonTest } from "./style";
+import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonDelete, ButtonAddPokelist, ButtonPokedex } from "./style";
 import logo from "../../assets/img/logo/logo_pokemon.svg"
 import { useContext } from "react";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useState } from "react";
-import { goPreviousPage } from "../../Routes/coordinator";
+import { goPreviousPage, goPokedex } from "../../Routes/coordinator";
 import { useNavigate } from "react-router-dom";
 
 
 
-export const Header = ({namePage, itemInPokelist, idItem}) => {
+export const Header = ({ namePage, itemInPokelist, idItem }) => {
 
     const navigate = useNavigate()
     const context = useContext(PokemonsContext)
-    const {addToPokeList, removeToPokelist} = context
+    const { addToPokeList, removeToPokelist } = context
 
     const [idInpokelist, setIdInPokelist] = useState(itemInPokelist)
 
@@ -27,7 +27,7 @@ export const Header = ({namePage, itemInPokelist, idItem}) => {
         home: (
             <>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
-                <ButtonTest text={"Pokédex"}/>
+                <ButtonPokedex text={"Pokédex"} goPokedex={goPokedex} navigate={navigate} />
             </>
 
         ),
@@ -45,7 +45,8 @@ export const Header = ({namePage, itemInPokelist, idItem}) => {
             <>
                 <TextAllPokemons onClick={() => goPreviousPage(navigate)}>Todos Pokémons</TextAllPokemons>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
-                {idInpokelist ? <ButtonDelete onClick={() => {removeToPokelist(idItem); changeIdInPokelist()}}>Excluir da Pokedex</ButtonDelete> : <ButtonAddPokelist onClick={() => {addToPokeList(idItem); changeIdInPokelist()}}>Adicionar a Pokedex</ButtonAddPokelist>}
+                {idInpokelist ? <ButtonDelete onClick={() => { removeToPokelist(idItem); changeIdInPokelist() }}>Excluir da Pokedex</ButtonDelete> :
+                    <ButtonAddPokelist onClick={() => { addToPokeList(idItem); changeIdInPokelist() }}>Adicionar a Pokedex</ButtonAddPokelist>}
             </>
         )
 
