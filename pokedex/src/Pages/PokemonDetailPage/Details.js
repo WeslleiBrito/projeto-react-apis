@@ -12,6 +12,7 @@ import {
     SectionMoves,
     ListMoves,
     ItemMoves,
+    NameMove,
     ImagePokemon
 } from "./styleDetails";
 
@@ -52,7 +53,6 @@ export const Details = () => {
     const renderStats = () => {
 
         const subtitles = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed", "Total"]
-        console.log(initial)
         return (
             <DetailsContainer>
                 <Heading as="h2" color={"#ffff"} marginBottom={"7vh"} fontWeight="700">Detalhes</Heading>
@@ -75,7 +75,7 @@ export const Details = () => {
                     </ListSecondImages>
 
                     <SectionBaseStats>
-                        <Heading textAlign={"start"} width={'100%'} fontSize={"1.2rem"} fontWeight={"800"}>Base stats</Heading>
+                        <Heading textAlign={"start"} width={'100%'} fontSize={"1.2rem"} fontWeight={"800"} marginBottom={"3vh"}>Base stats</Heading>
                         <ListBaseStats>
                             {
                                 subtitles.map((title, index) => {
@@ -118,12 +118,14 @@ export const Details = () => {
                     </Description>
 
                     <SectionMoves>
-                        <Heading as="h2" fontSize={"1.2rem"} fontWeight={"800"}>Moves:</Heading>
+                        <Heading as="h2" fontSize={"1.2rem"} fontWeight={"800"} marginBottom={"3vh"}>Moves:</Heading>
                         <ListMoves>
                             {
                                 initial.moves.map((move, index) => {
                                     return (
-                                        <ItemMoves key={index}>{move}</ItemMoves>
+                                        <ItemMoves key={index}>
+                                            <NameMove>{move}</NameMove>
+                                        </ItemMoves>
                                     )
                                 })
                             }

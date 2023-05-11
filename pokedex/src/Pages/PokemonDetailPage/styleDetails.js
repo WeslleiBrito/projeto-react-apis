@@ -28,6 +28,7 @@ export const CardDetalis = styled.section`
   background-size: 58.5%;
   position: relative;
   align-self: center;
+  border-radius: 2em;
 `
 export const ListSecondImages = styled.ul`
   grid-row: 1 / 3;
@@ -46,6 +47,7 @@ export const ItemSecondImage = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1em;
 `
 export const SecondImage = styled.img`
   width: 70%;
@@ -59,11 +61,12 @@ export const SectionBaseStats = styled.section`
   width: 28vw;
   margin-left: 2vw;
   padding: 2vh;
+  padding-top: 3.5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 6vw;
-  
+  margin-right: 5.1vw;
+  border-radius: 1em;
 `
 
 
@@ -101,21 +104,60 @@ export const Description = styled.section`
   display: flex;
   flex-direction: column;
   width: 15vw;
+  height: 16vh;
+  margin-bottom: 6vh;
 `
 
 export const SectionMoves = styled.section`
   background: #FFFFFF;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  width: 18vw;
-  height: 60vh;
+  width: 16vw;
+  height: 57.7vh;
   padding: 2vh;
-
+  border-radius: 0.5em;
 `
 export const ListMoves = styled.ul`
+  height: 35vh;
+  width: 12vw;
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #7EC6C3;
+    border-radius: 10px; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #5EC2BE;
+  }
 `
 
 export const ItemMoves = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: max-content;
+  border-radius: 0.7em;
+  background-color:  #00000024;
+  margin-bottom: 2vh;
+  height: 5vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border: 1px dashed #ffff;
+
+`
+
+export const NameMove = styled.p`
 `
 
 export const ImagePokemon = styled.img`
