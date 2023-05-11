@@ -3,11 +3,12 @@ import { Heading } from "@chakra-ui/react"
 
 export const Main = styled.main`
     height: 320vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     background-color: #5D5D5D;
-
+    padding-left: 2vh;
+    padding-right: 2vh;
    
 `
 
@@ -21,8 +22,7 @@ export const List = styled.ul`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(7, 1fr);
     row-gap: 8vh;
-    column-gap: 2vw;
-    align-self: center;
     margin-top: 10vh;
-    padding: 1vw;
+    width: 90%;
+    column-gap: 2vw;
 `

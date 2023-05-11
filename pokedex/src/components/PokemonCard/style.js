@@ -1,24 +1,24 @@
 import styled from "styled-components";
 import pokeball from "../../assets/img/backgrounds/pokeball.svg"
-import { Heading } from "@chakra-ui/react";
+import { Button, Heading } from "@chakra-ui/react";
 
 export const ItemPokemon = styled.li`
     display: flex;
     flex-direction: column;
     position: relative;
     height: 30vh;
-    width: 30vw;
+    width: 31vw;
     background: url(${pokeball}) no-repeat, ${(props) => props.bgColor};
     background-size: 37vh;
-    background-position-x: 14.8vw;
+    background-position-x: 15.8vw;
     background-position-y: -3.5vw;
     border-radius: 1em;
-    padding: 2vh;
+    padding: 2.5vh;
 `
 
 export const IdPokemon = ({ text }) => {
 
-    return <Heading as={"h2"} fontSize={"1rem"} color={"#ffff"} fontWeight={"700"}>{text}</Heading>
+    return <Heading as={"h2"} fontSize={"1rem"} color={"#ffff"} fontWeight={"700"} padding={"0"}>{text}</Heading>
 }
 
 
@@ -30,7 +30,7 @@ export const ImagePokemon = styled.img`
     height: 25vh;
     width: 25vh;
     top: -23%;
-    left: 58%;
+    left: 60%;
 `
 
 export const ListTypes = styled.ul`
@@ -60,11 +60,35 @@ export const NameType = styled.p`
     font-size: 0.8em;
 `
 
-
-export const Details = styled.a`
+export const Actions = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4.5vh;
 `
 
-export const ButtonCapture = styled.button`
-`
+export const ButtonDetalis = ({ text, goDetalis, id, navigate }) => {
+
+    return <Button
+        color={"#ffff"}
+        padding={"0"}
+        size={'auto'}
+        inlineSize={"max-content"}
+        fontWeight={"700"}
+        bg={"transparent"}
+        _hover={{}}
+        _active={{}}
+        textDecoration={"underline"}
+        onClick={() => { goDetalis(navigate, id) }}>
+        {text}
+    </Button>
+}
+
+export const ButtonCapture = ({ text, addToPokeList, id }) => {
+
+    return <Button onClick={() => { addToPokeList(id) }} bg={"#ffff"} _hover={{}} height={"4.5vh"}>{text}</Button>
+}
+
 
 

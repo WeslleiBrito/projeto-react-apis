@@ -1,5 +1,5 @@
 
-import { ItemPokemon, IdPokemon, ListTypes, ItemType, ImagePokemon, Details, ButtonCapture, TypeIcon, NameType } from './style'
+import { ItemPokemon, IdPokemon, ListTypes, ItemType, ImagePokemon, ButtonDetalis, ButtonCapture, TypeIcon, NameType, Actions } from './style'
 import { Heading } from '@chakra-ui/react'
 import { replaceText } from '../../tools/replaceText'
 import { PokemonsContext } from '../../contexts/PokemonsContext'
@@ -19,8 +19,7 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
     return (
         <ItemPokemon bgColor={bgColor}>
             <IdPokemon text={`#${String(id).padStart(2, "0")}`} />
-            {/* <Heading as={"h2"} color={"#ffff"} fontWeight={"700"}>{`#${String(id).padStart(2, "0")}`}</Heading> */}
-            <Heading as={"h2"} color={"#ffff"} fontWeight={"700"}>{namePokemon}</Heading>
+            <Heading as={"h2"} color={"#ffff"} fontWeight={"700"} marginBottom={"1.5vh"}>{namePokemon}</Heading>
             <ImagePokemon src={pathImagePokemon} alt='Imagem do Pokemon' />
             <ListTypes>
                 {listType.map((item, index) => {
@@ -30,8 +29,11 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon }) =
                     </ItemType>
                 })}
             </ListTypes>
-            <Details onClick={() => goDetails(navigate, id)}>Detalhes</Details>
-            <ButtonCapture onClick={() => addToPokeList(id)}>Capturar!</ButtonCapture>
+            <Actions>
+                <ButtonDetalis text={"Detalhes"} goDetalis={goDetails} navigate={navigate} id={id} />
+                <ButtonCapture text={"Capiturar!"} addToPokeList={addToPokeList} id={id} />
+            </Actions>
+
         </ItemPokemon>
     )
 }

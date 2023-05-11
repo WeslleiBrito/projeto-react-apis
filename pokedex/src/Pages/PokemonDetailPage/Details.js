@@ -102,7 +102,7 @@ export const Details = () => {
 
                     <Description>
                         <IdPokemon text={`#${String(initial.id).padStart(2, "0")}`} />
-                        <Heading color={"#ffff"} marginBottom={"1vh"}>{initial.name}</Heading>
+                        <Heading color={"#ffff"} marginBottom={"1vh"} width={"20vw"}>{initial.name}</Heading>
                         <ListTypes>
                             {
                                 initial.types.map((type, index) => {
