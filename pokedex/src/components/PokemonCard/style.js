@@ -92,7 +92,7 @@ export const ButtonCapture = ({ text, addToPokeList, id }) => {
 
 export const ButtonRemove = ({ text, removeToPokelist, id }) => {
 
-    return <Button onClick={() => { removeToPokelist(id) }} bg={"#FF6262"} color={"#ffff"}>{text}</Button>
+    return <Button onClick={() => { removeToPokelist(id) }} bg={"#FF6262"} color={"#ffff"} height={"4.5vh"}>{text}</Button>
 }
 
 

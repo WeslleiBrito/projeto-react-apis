@@ -4,6 +4,7 @@ import { Main, List, Title } from "../PokemonListPage/styleHomePage"
 import { Item } from "../../components/PokemonCard/PokemonCard"
 import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES"
 import { colorTypePokemons, iconsTypes } from "../../constants/TYPES_POKEMONS"
+import { Header } from "../../components/Header/Header"
 
 export const Pokedex = () => {
     const context = useContext(PokemonsContext)
@@ -12,6 +13,7 @@ export const Pokedex = () => {
     console.log(pokelist)
     return (
         <>
+            <Header namePage={"pokedex"}/>
             <Main>
                 <Title text={"Meus Pokémons"} />
                 <List>
