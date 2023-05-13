@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Button } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
+import { ChevronLeftIcon } from "@chakra-ui/icons"
 
 export const HeaderContainer = styled.header`
     height: 17vh;
@@ -12,11 +13,20 @@ export const HeaderContainer = styled.header`
 export const LogoPokedex = styled.img`
     height: 13vh;
     grid-column: 2 / 3;
+    justify-self: center;
 `
 export const TextAllPokemons = styled.h3`
     
 `
+export const ButtonReturnPage = ({actionFunction, navigate}) => {
 
+    return(
+        <Button onClick={() => actionFunction(navigate)}  _hover={{}} _active={{}} w={"18vw"} bg={"transparent"}>
+            <ChevronLeftIcon w={10} h={10} mt={'1'} />
+            <Text fontSize={"1.5rem"}  fontWeight={"700"} display={"flex"} alignItems={"center"} textDecoration={"underline"}>Todos Pokémons</Text>
+        </Button>
+    )
+}
 export const ButtonPokeball = styled.button`
     
 `

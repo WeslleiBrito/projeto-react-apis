@@ -1,5 +1,5 @@
 
-import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonDelete, ButtonAddPokelist, ButtonPokedex } from "./style";
+import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonDelete, ButtonAddPokelist, ButtonPokedex, ButtonReturnPage } from "./style";
 import logo from "../../assets/img/logo/logo_pokemon.svg"
 import { useContext } from "react";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
@@ -34,7 +34,7 @@ export const Header = ({ namePage, itemInPokelist, idItem }) => {
 
         pokedex: (
             <>
-                <TextAllPokemons onClick={() => goPreviousPage(navigate)}>Todos Pokémons</TextAllPokemons>
+                <ButtonReturnPage actionFunction={goPreviousPage} navigate={navigate}/>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
 
             </>
@@ -43,7 +43,7 @@ export const Header = ({ namePage, itemInPokelist, idItem }) => {
 
         details: (
             <>
-                <TextAllPokemons onClick={() => goPreviousPage(navigate)}>Todos Pokémons</TextAllPokemons>
+                <ButtonReturnPage actionFunction={goPreviousPage} navigate={navigate}/>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
                 {idInpokelist ? <ButtonDelete onClick={() => { removeToPokelist(idItem); changeIdInPokelist() }}>Excluir da Pokedex</ButtonDelete> :
                     <ButtonAddPokelist onClick={() => { addToPokeList(idItem); changeIdInPokelist() }}>Adicionar a Pokedex</ButtonAddPokelist>}
