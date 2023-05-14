@@ -1,5 +1,5 @@
 
-import { HeaderContainer, LogoPokedex, TextAllPokemons, ButtonDelete, ButtonAddPokelist, ButtonPokedex, ButtonReturnPage } from "./style";
+import { HeaderContainer, LogoPokedex, ButtonPokedex, ButtonReturnPage, AddToPokelistBotton, RemoveToPokelistBotton } from "./style";
 import logo from "../../assets/img/logo/logo_pokemon.svg"
 import { useContext } from "react";
 import { PokemonsContext } from "../../contexts/PokemonsContext";
@@ -45,8 +45,7 @@ export const Header = ({ namePage, itemInPokelist, idItem }) => {
             <>
                 <ButtonReturnPage actionFunction={goPreviousPage} navigate={navigate}/>
                 <LogoPokedex src={logo} alt="Logo pokémon" />
-                {idInpokelist ? <ButtonDelete onClick={() => { removeToPokelist(idItem); changeIdInPokelist() }}>Excluir da Pokedex</ButtonDelete> :
-                    <ButtonAddPokelist onClick={() => { addToPokeList(idItem); changeIdInPokelist() }}>Adicionar a Pokedex</ButtonAddPokelist>}
+                {idInpokelist ? <RemoveToPokelistBotton removeToPokelist={removeToPokelist} id={idItem} changeIdInPokelist={changeIdInPokelist}/> : <AddToPokelistBotton addToPokeList={addToPokeList} id={idItem} changeIdInPokelist={changeIdInPokelist}/>}
             </>
         )
 

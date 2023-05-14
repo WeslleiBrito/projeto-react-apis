@@ -31,15 +31,47 @@ export const ButtonPokeball = styled.button`
     
 `
 
-export const ButtonDelete = styled.button`
-    
-`
-export const ButtonAddPokelist = styled.button`
-`
+export const AddToPokelistBotton = ({addToPokeList, id, changeIdInPokelist}) => {
+    return(
+        <Button
+            onClick={() => {addToPokeList(id); changeIdInPokelist()}}
+            _active={{}}
+            _hover={{}}
+            color={"#ffff"}
+            bg={"#3e56ae"}
+            inlineSize={"max-content"}
+            fontWeight={"400"}
+            h={"6vh"}
+            fontSize={"0.7em"}
+            justifySelf={"end"}
+            marginRight={"2vw"}
+        >
+            Capturar Pokémon
+        </Button>
+    )
+}
+
+export const RemoveToPokelistBotton = ({removeToPokelist, id, changeIdInPokelist}) => {
+    return(
+        <Button
+            onClick={() => {removeToPokelist(id); changeIdInPokelist()}}
+            _active={{}}
+            _hover={{}}
+            color={"#ffff"}
+            bg={"#FF6262"}
+            inlineSize={"max-content"}
+            fontWeight={"400"}
+            h={"6vh"}
+            fontSize={"0.7em"}
+            justifySelf={"end"}
+            marginRight={"2vw"}
+        >
+            Excluir da Pokédex
+        </Button>
+    )
+}
 
 export const ButtonPokedex = ({ text, goPokedex, navigate }) => {
-
-
     return <Button bg={"#33A4F5"} height={"7vh"} justifySelf={"end"} width={"10vw"} marginRight={"1.5vw"} onClick={() => { goPokedex(navigate) }}>{text}</Button>
 }
 
