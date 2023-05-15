@@ -5,15 +5,18 @@ import { Item } from "../../components/PokemonCard/PokemonCard"
 import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES"
 import { colorTypePokemons, iconsTypes } from "../../constants/TYPES_POKEMONS"
 import { Header } from "../../components/Header/Header"
+import { VerticallyCenter } from "../../components/Modal/Modal"
+import { useDisclosure } from "@chakra-ui/react"
 
 export const Pokedex = () => {
     const context = useContext(PokemonsContext)
-    const { pokelist } = context
+    const { pokelist, mensage } = context
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
-    console.log(pokelist)
+
     return (
         <>
-            <Header namePage={"pokedex"}/>
+            <Header namePage={"pokedex"} />
             <Main>
                 <Title text={"Meus Pokémons"} />
                 <List>
@@ -29,10 +32,11 @@ export const Pokedex = () => {
                             const pathImagePokemon = pokemon.imagePokemonDefault
 
                             return (
-                                <Item key={index} bgColor={bgColor} listType={listType} pathImagePokemon={pathImagePokemon} id={id} namePokemon={namePokemon} inPokelist={true} />
+                                <Item key={index} bgColor={bgColor} listType={listType} pathImagePokemon={pathImagePokemon} id={id} namePokemon={namePokemon} inPokelist={true} onOpen={onOpen} />
                             )
                         })
                     }
+                    <VerticallyCenter isOpen={isOpen} onClose={onClose} heading={mensage[0]} text={mensage[1]} />
                 </List>
             </Main>
         </>

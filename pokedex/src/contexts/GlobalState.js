@@ -14,6 +14,18 @@ export const GlobalState = (props) => {
 
     const [page, setPage] = useState("home")
 
+    const [mensage, setMensage] = useState([])
+
+    const changleMensage = (actionMensage) => {
+
+        const mensages = {
+            add: ["Gotcha!", "O Pokémon foi adicionado a sua Pokédex"],
+            remove: ["Oh, no!!", "O Pokémon foi removido da sua Pokedéx"]
+        }
+
+        setMensage(mensages[actionMensage])
+    }
+
     const addToPokeList = (id) => {
         const newItemPokelist = pokemons.filter((item) => { return item.id === Number(id) })[0]
         const newListPokemons = pokemons.filter((item) => { return item.id !== Number(id) })
@@ -52,7 +64,9 @@ export const GlobalState = (props) => {
         setPokelist,
         loading,
         addToPokeList,
-        removeToPokelist
+        removeToPokelist,
+        mensage,
+        changleMensage
     }
 
     useEffect(() => {

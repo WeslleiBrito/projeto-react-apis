@@ -85,14 +85,14 @@ export const ButtonDetalis = ({ text, goDetalis, id, navigate }) => {
     </Button>
 }
 
-export const ButtonCapture = ({ text, addToPokeList, id }) => {
+export const ButtonCapture = ({ text, addToPokeList, id, onOpen, changleMensage }) => {
 
-    return <Button onClick={() => { addToPokeList(id) }} bg={"#ffff"} _hover={{}} height={"4.5vh"}>{text}</Button>
+    return <Button onClick={() => { addToPokeList(id); changleMensage("add"); onOpen() }} bg={"#ffff"} _hover={{}} height={"4.5vh"}>{text}</Button>
 }
 
-export const ButtonRemove = ({ text, removeToPokelist, id }) => {
+export const ButtonRemove = ({ text, removeToPokelist, id, onOpen, changleMensage }) => {
 
-    return <Button onClick={() => { removeToPokelist(id) }} bg={"#FF6262"} color={"#ffff"} height={"4.5vh"}>{text}</Button>
+    return <Button onClick={() => { removeToPokelist(id); changleMensage("remove"); onOpen() }} bg={"#FF6262"} color={"#ffff"} height={"4.5vh"}>{text}</Button>
 }
 
 

@@ -8,13 +8,12 @@ import { goDetails } from "../../Routes/coordinator"
 import { useNavigate } from 'react-router-dom'
 
 
-export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon, inPokelist }) => {
+export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon, inPokelist, onOpen }) => {
 
     const navigate = useNavigate()
 
     const context = useContext(PokemonsContext)
-    const { addToPokeList, removeToPokelist } = context
-
+    const { addToPokeList, removeToPokelist, changleMensage } = context
 
     return (
         <ItemPokemon bgColor={bgColor}>
@@ -31,8 +30,8 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon, inP
             </ListTypes>
             <Actions>
                 <ButtonDetalis text={"Detalhes"} goDetalis={goDetails} navigate={navigate} id={id} />
-                {!inPokelist && <ButtonCapture text={"Capiturar!"} addToPokeList={addToPokeList} id={id} />}
-                {inPokelist && <ButtonRemove text={"Excluir"} removeToPokelist={removeToPokelist} id={id} />}
+                {!inPokelist && <ButtonCapture text={"Capiturar!"} addToPokeList={addToPokeList} id={id} onOpen={onOpen} changleMensage={changleMensage} />}
+                {inPokelist && <ButtonRemove text={"Excluir"} removeToPokelist={removeToPokelist} id={id} onOpen={onOpen} changleMensage={changleMensage} />}
             </Actions>
 
         </ItemPokemon>

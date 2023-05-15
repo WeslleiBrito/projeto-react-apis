@@ -6,13 +6,15 @@ import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useContext } from "react";
 import { Header } from "../../components/Header/Header";
 import { Loading } from "../../components/Loading/Loading";
+import { VerticallyCenter } from "../../components/Modal/Modal";
+import { useDisclosure } from "@chakra-ui/react";
 
 
 export const HomePage = () => {
 
     const context = useContext(PokemonsContext)
-    const { pokemons, loading } = context
-
+    const { pokemons, loading, mensage } = context
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     const MainPokemons = () => {
         return (
@@ -29,11 +31,13 @@ export const HomePage = () => {
                         const pathImagePokemon = pokemon.imagePokemonDefault
 
                         return (
-                            <Item key={index} bgColor={bgColor} listType={listType} pathImagePokemon={pathImagePokemon} id={id} namePokemon={namePokemon} />
+                            <Item key={index} bgColor={bgColor} listType={listType} pathImagePokemon={pathImagePokemon} id={id} namePokemon={namePokemon} onOpen={onOpen} />
                         )
                     }
                     )
                     }
+
+                    <VerticallyCenter isOpen={isOpen} onClose={onClose} heading={mensage[0]} text={mensage[1]} />
                 </List>
             </Main>
         )
