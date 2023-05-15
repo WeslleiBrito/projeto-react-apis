@@ -18,7 +18,7 @@ export const Item = ({ bgColor, listType, pathImagePokemon, id, namePokemon, inP
     return (
         <ItemPokemon bgColor={bgColor}>
             <IdPokemon text={`#${String(id).padStart(2, "0")}`} />
-            <Heading as={"h2"} color={"#ffff"} fontWeight={"700"} marginBottom={"1.5vh"}>{namePokemon}</Heading>
+            <Heading as={"h2"} color={"#ffff"} fontWeight={"700"} marginBottom={"1.5vh"} fontFamily={"'Inter', sans-serif"}>{namePokemon}</Heading>
             <ImagePokemon src={pathImagePokemon} alt='Imagem do Pokemon' />
             <ListTypes>
                 {listType.map((item, index) => {

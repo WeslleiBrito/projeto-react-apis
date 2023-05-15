@@ -55,7 +55,7 @@ export const Details = () => {
         const subtitles = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed", "Total"]
         return (
             <DetailsContainer>
-                <Heading as="h2" color={"#ffff"} marginBottom={"7vh"} fontWeight="700">Detalhes</Heading>
+                <Heading as="h2" color={"#ffff"} marginBottom={"7vh"} fontFamily={"'Poppins', sans-serif"} fontWeight={"700"}>Detalhes</Heading>
                 <CardDetalis color={colorBackgroundTypes[initial.types[0]]}>
                     <ListSecondImages>
                         {
@@ -75,7 +75,7 @@ export const Details = () => {
                     </ListSecondImages>
 
                     <SectionBaseStats>
-                        <Heading textAlign={"start"} width={'100%'} fontSize={"1.2rem"} fontWeight={"800"} marginBottom={"3vh"}>Base stats</Heading>
+                        <Heading textAlign={"start"} width={'100%'} fontSize={"1.2rem"} fontFamily={"'Roboto', sans-serif"} fontWeight={"700"} marginBottom={"3vh"}>Base stats</Heading>
                         <ListBaseStats>
                             {
                                 subtitles.map((title, index) => {
@@ -118,7 +118,7 @@ export const Details = () => {
                     </Description>
 
                     <SectionMoves>
-                        <Heading as="h2" fontSize={"1.2rem"} fontWeight={"800"} marginBottom={"3vh"}>Moves:</Heading>
+                        <Heading as="h2" fontSize={"1.2rem"} marginBottom={"3vh"} fontFamily={"'Inter', sans-serif"} fontWeight={"800"}>Moves:</Heading>
                         <ListMoves>
                             {
                                 initial.moves.map((move, index) => {

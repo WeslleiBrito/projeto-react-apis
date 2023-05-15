@@ -18,12 +18,12 @@ export const LogoPokedex = styled.img`
 export const TextAllPokemons = styled.h3`
     
 `
-export const ButtonReturnPage = ({actionFunction, navigate}) => {
+export const ButtonReturnPage = ({ actionFunction, navigate }) => {
 
-    return(
-        <Button onClick={() => actionFunction(navigate)}  _hover={{}} _active={{}} w={"18vw"} bg={"transparent"}>
+    return (
+        <Button onClick={() => actionFunction(navigate)} _hover={{}} _active={{}} w={"18vw"} bg={"transparent"}>
             <ChevronLeftIcon w={10} h={10} mt={'1'} />
-            <Text fontSize={"1.5rem"}  fontWeight={"700"} display={"flex"} alignItems={"center"} textDecoration={"underline"}>Todos Pokémons</Text>
+            <Text fontSize={"1.5rem"} fontWeight={"700"} display={"flex"} alignItems={"center"} textDecoration={"underline"}>Todos Pokémons</Text>
         </Button>
     )
 }
@@ -31,10 +31,10 @@ export const ButtonPokeball = styled.button`
     
 `
 
-export const AddToPokelistBotton = ({addToPokeList, id, changeIdInPokelist}) => {
-    return(
+export const AddToPokelistBotton = ({ addToPokeList, id, changeIdInPokelist }) => {
+    return (
         <Button
-            onClick={() => {addToPokeList(id); changeIdInPokelist()}}
+            onClick={() => { addToPokeList(id); changeIdInPokelist() }}
             _active={{}}
             _hover={{}}
             color={"#ffff"}
@@ -51,10 +51,10 @@ export const AddToPokelistBotton = ({addToPokeList, id, changeIdInPokelist}) => 
     )
 }
 
-export const RemoveToPokelistBotton = ({removeToPokelist, id, changeIdInPokelist}) => {
-    return(
+export const RemoveToPokelistBotton = ({ removeToPokelist, id, changeIdInPokelist }) => {
+    return (
         <Button
-            onClick={() => {removeToPokelist(id); changeIdInPokelist()}}
+            onClick={() => { removeToPokelist(id); changeIdInPokelist() }}
             _active={{}}
             _hover={{}}
             color={"#ffff"}
@@ -72,6 +72,16 @@ export const RemoveToPokelistBotton = ({removeToPokelist, id, changeIdInPokelist
 }
 
 export const ButtonPokedex = ({ text, goPokedex, navigate }) => {
-    return <Button bg={"#33A4F5"} height={"7vh"} justifySelf={"end"} width={"10vw"} marginRight={"1.5vw"} onClick={() => { goPokedex(navigate) }}>{text}</Button>
+    return <Button bg={"#33A4F5"}
+        height={"7vh"}
+        justifySelf={"end"}
+        width={"10vw"}
+        marginRight={"1.5vw"}
+        fontFamily={"'Poppins', sans-serif"}
+        fontWeight={"700"}
+        color={"#FFFFFF"}
+        onClick={() => { goPokedex(navigate) }}>
+        {text}
+    </Button>
 }
 

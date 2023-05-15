@@ -12,7 +12,15 @@ export const Main = styled.main`
 `
 
 export const Title = ({ text }) => {
-    return <Heading as={"h2"} fontSize={"2rem"} color={"#ffff"}>{text}</Heading>
+    return <Heading
+        as={"h2"}
+        fontSize={"2rem"}
+        color={"#ffff"}
+        fontFamily={"'Poppins', sans-serif"}
+        fontWeight={"700"}
+    >
+        {text}
+    </Heading>
 }
 
 

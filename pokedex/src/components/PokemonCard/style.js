@@ -18,7 +18,15 @@ export const ItemPokemon = styled.li`
 
 export const IdPokemon = ({ text }) => {
 
-    return <Heading as={"h2"} fontSize={"1rem"} color={"#ffff"} fontWeight={"700"} padding={"0"}>{text}</Heading>
+    return <Heading as={"h2"}
+        fontSize={"1rem"}
+        color={"#ffff"}
+        fontWeight={"700"}
+        padding={"0"}
+        fontFamily="'Poppins', sans-serif"
+    >
+        {text}
+    </Heading>
 }
 
 
@@ -58,6 +66,8 @@ export const ItemType = styled.li`
 
 export const NameType = styled.p`
     font-size: 0.8em;
+    font-family:'Poppins', sans-serif;
+    font-weight: 400;
 `
 
 export const Actions = styled.div`
@@ -65,7 +75,7 @@ export const Actions = styled.div`
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    margin-top: 4.5vh;
+    margin-top: 4vh;
 `
 
 export const ButtonDetalis = ({ text, goDetalis, id, navigate }) => {
@@ -76,6 +86,7 @@ export const ButtonDetalis = ({ text, goDetalis, id, navigate }) => {
         size={'auto'}
         inlineSize={"max-content"}
         fontWeight={"700"}
+        fontFamily={"'Poppins', sans-serif"}
         bg={"transparent"}
         _hover={{}}
         _active={{}}
@@ -87,7 +98,7 @@ export const ButtonDetalis = ({ text, goDetalis, id, navigate }) => {
 
 export const ButtonCapture = ({ text, addToPokeList, id, onOpen, changleMensage }) => {
 
-    return <Button onClick={() => { addToPokeList(id); changleMensage("add"); onOpen() }} bg={"#ffff"} _hover={{}} height={"4.5vh"}>{text}</Button>
+    return <Button onClick={() => { addToPokeList(id); changleMensage("add"); onOpen() }} bg={"#ffff"} _hover={{}} height={"4.5vh"} fontFamily={"'Poppins', sans-serif"} fontWeight={"400"}>{text}</Button>
 }
 
 export const ButtonRemove = ({ text, removeToPokelist, id, onOpen, changleMensage }) => {
