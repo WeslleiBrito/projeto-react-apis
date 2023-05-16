@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { ValueBaseStats } from "../Pages/PokemonDetailPage/styleDetails";
 
 
-export const ValueState = ({ endValue }) => {
+export const ValueState = ({ endValue, fontWeight }) => {
 
     const [value, setValue] = useState(0)
 
@@ -22,6 +22,6 @@ export const ValueState = ({ endValue }) => {
     useEffect(valueProgress, [endValue, value])
 
     return (
-        <ValueBaseStats>{value}</ValueBaseStats>
+        <ValueBaseStats fontWeight={fontWeight}>{value}</ValueBaseStats>
     )
 }

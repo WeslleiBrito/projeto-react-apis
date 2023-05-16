@@ -1,5 +1,4 @@
 import {
-    DetailsContainer,
     CardDetalis,
     ListSecondImages,
     ItemSecondImage,
@@ -36,7 +35,7 @@ import { iconsTypes, colorTypePokemons } from "../../constants/TYPES_POKEMONS";
 import { colorBackgroundTypes } from "../../constants/BACKGROUND_TYPES";
 import { replaceText } from "../../tools/replaceText";
 import { Heading } from "@chakra-ui/react";
-
+import { Title, Main } from "../PokemonListPage/styleHomePage";
 
 
 export const Details = () => {
@@ -54,8 +53,8 @@ export const Details = () => {
 
         const subtitles = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed", "Total"]
         return (
-            <DetailsContainer>
-                <Heading as="h2" color={"#ffff"} marginBottom={"7vh"} fontFamily={"'Poppins', sans-serif"} fontWeight={"700"}>Detalhes</Heading>
+            <Main>
+                <Title text={"Detalhes"} />
                 <CardDetalis color={colorBackgroundTypes[initial.types[0]]}>
                     <ListSecondImages>
                         {
@@ -90,7 +89,7 @@ export const Details = () => {
                                     return (
                                         <ItemBaseStats key={index}>
                                             <LableBaseStats>{title}</LableBaseStats>
-                                            {initial.baseStats[index] > 0 ? <ValueState endValue={initial.baseStats[index]} /> : <ValueState endValue={amount} />}
+                                            {initial.baseStats[index] > 0 ? <ValueState endValue={initial.baseStats[index]} /> : <ValueState fontWeight={700} endValue={amount} />}
                                             {initial.baseStats[index] > 0 ? <Progress endValue={initial.baseStats[index]} gradient={colorGradientFinaly({ multiplierFactor: initial.baseStats[index], colorInitial: colorProgress.colorInitial, colorFinaly: colorProgress.colorFinaly })} border={border} /> : false}
 
                                         </ItemBaseStats>
@@ -134,7 +133,7 @@ export const Details = () => {
                     <ImagePokemon src={initial.imagePokemonDefault} />
                 </CardDetalis>
 
-            </DetailsContainer>
+            </Main>
         )
 
     }

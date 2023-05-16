@@ -21,7 +21,7 @@ export const TextAllPokemons = styled.h3`
 export const ButtonReturnPage = ({ actionFunction, navigate }) => {
 
     return (
-        <Button onClick={() => actionFunction(navigate)} _hover={{}} _active={{}} w={"18vw"} bg={"transparent"}>
+        <Button onClick={() => actionFunction(navigate)} _hover={{}} _active={{}} w={"18vw"} bg={"transparent"} fontWeight={700} fontFamily={"'Poppins', sans-serif"}>
             <ChevronLeftIcon w={10} h={10} mt={'1'} />
             <Text fontSize={"1.5rem"} fontWeight={"700"} display={"flex"} alignItems={"center"} textDecoration={"underline"}>Todos Pokémons</Text>
         </Button>

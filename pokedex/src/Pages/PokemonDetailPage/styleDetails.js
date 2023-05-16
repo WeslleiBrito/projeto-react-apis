@@ -21,6 +21,7 @@ export const CardDetalis = styled.section`
   padding-top: 4vh;
   padding-bottom: 4vh;
   padding-left: 4vh;
+  margin-top: 10vh;
   background-color:  ${(props) => props.color};
   background-image: url(${pokeball});
   background-repeat: no-repeat;
@@ -91,14 +92,17 @@ export const ItemBaseStats = styled.li`
 export const LableBaseStats = styled.p`
   width: 5vw;
   text-align: end;
-
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
 `
 
 export const ValueBaseStats = styled.p`
   text-align: end;
   width: 3vw;
   margin-right: 3vw;
-
+  font-family: 'Montserrat', sans-serif;
+  font-weight: ${(props) => props.fontWeight ? props.fontWeight : "normal"};
+  font-size: 0.9em;
 `
 
 export const Description = styled.section`
@@ -159,6 +163,7 @@ export const ItemMoves = styled.li`
 `
 
 export const NameMove = styled.p`
+  font-family: 'Montserrat', sans-serif;
 `
 
 export const ImagePokemon = styled.img`

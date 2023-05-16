@@ -3,7 +3,7 @@ import { Heading } from "@chakra-ui/react"
 
 export const Main = styled.main`
     height: 320vh;
-    width: 99vw;
+    width: 98.9vw;
     display: flex;
     flex-direction: column;
     background-color: #5D5D5D;
@@ -18,6 +18,7 @@ export const Title = ({ text }) => {
         color={"#ffff"}
         fontFamily={"'Poppins', sans-serif"}
         fontWeight={"700"}
+        inlineSize={"max-content"}
     >
         {text}
     </Heading>
