@@ -6,6 +6,9 @@ import { PokemonsContext } from "../../contexts/PokemonsContext";
 import { useState } from "react";
 import { goPreviousPage, goPokedex } from "../../Routes/coordinator";
 import { useNavigate } from "react-router-dom";
+import { VerticallyCenter } from "../Modal/Modal";
+import { useDisclosure } from "@chakra-ui/react";
+
 
 
 
@@ -13,7 +16,8 @@ export const Header = ({ namePage, itemInPokelist, idItem }) => {
 
     const navigate = useNavigate()
     const context = useContext(PokemonsContext)
-    const { addToPokeList, removeToPokelist } = context
+    const { addToPokeList, removeToPokelist, mensage, changleMensage } = context
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     const [idInpokelist, setIdInPokelist] = useState(itemInPokelist)
 
@@ -34,7 +38,7 @@ export const Header = ({ namePage, itemInPokelist, idItem }) => {
 
         pokedex: (
             <>
-                <ButtonReturnPage actionFunction={goPreviousPage} navigate={navigate}/>
+                <ButtonReturnPage actionFunction={goPreviousPage} navigate={navigate} />
                 <LogoPokedex src={logo} alt="Logo pokémon" />
 
             </>
@@ -43,9 +47,10 @@ export const Header = ({ namePage, itemInPokelist, idItem }) => {
 
         details: (
             <>
-                <ButtonReturnPage actionFunction={goPreviousPage} navigate={navigate}/>
+                <ButtonReturnPage actionFunction={goPreviousPage} navigate={navigate} />
                 <LogoPokedex src={logo} alt="Logo pokémon" />
-                {idInpokelist ? <RemoveToPokelistBotton removeToPokelist={removeToPokelist} id={idItem} changeIdInPokelist={changeIdInPokelist}/> : <AddToPokelistBotton addToPokeList={addToPokeList} id={idItem} changeIdInPokelist={changeIdInPokelist}/>}
+                {idInpokelist ? <RemoveToPokelistBotton removeToPokelist={removeToPokelist} id={idItem} changeIdInPokelist={changeIdInPokelist} onOpen={onOpen} changleMensage={changleMensage} /> :
+                    <AddToPokelistBotton addToPokeList={addToPokeList} id={idItem} changeIdInPokelist={changeIdInPokelist} onOpen={onOpen} changleMensage={changleMensage} />}
             </>
         )
 
@@ -55,6 +60,7 @@ export const Header = ({ namePage, itemInPokelist, idItem }) => {
     return (
         <HeaderContainer>
             {config[namePage ? namePage : "home"]}
+            <VerticallyCenter isOpen={isOpen} onClose={onClose} heading={mensage[0]} text={mensage[1]} />
         </HeaderContainer>
     )
 }

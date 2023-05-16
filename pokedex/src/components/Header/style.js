@@ -31,10 +31,10 @@ export const ButtonPokeball = styled.button`
     
 `
 
-export const AddToPokelistBotton = ({ addToPokeList, id, changeIdInPokelist }) => {
+export const AddToPokelistBotton = ({ addToPokeList, id, changeIdInPokelist, onOpen, changleMensage }) => {
     return (
         <Button
-            onClick={() => { addToPokeList(id); changeIdInPokelist() }}
+            onClick={() => { addToPokeList(id); changeIdInPokelist(); changleMensage('add'); onOpen() }}
             _active={{}}
             _hover={{}}
             color={"#ffff"}
@@ -51,10 +51,10 @@ export const AddToPokelistBotton = ({ addToPokeList, id, changeIdInPokelist }) =
     )
 }
 
-export const RemoveToPokelistBotton = ({ removeToPokelist, id, changeIdInPokelist }) => {
+export const RemoveToPokelistBotton = ({ removeToPokelist, id, changeIdInPokelist, onOpen, changleMensage }) => {
     return (
         <Button
-            onClick={() => { removeToPokelist(id); changeIdInPokelist() }}
+            onClick={() => { removeToPokelist(id); changeIdInPokelist(); changleMensage('remove'); onOpen() }}
             _active={{}}
             _hover={{}}
             color={"#ffff"}
