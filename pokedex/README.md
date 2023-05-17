@@ -13,3 +13,17 @@ Projeto de conclusão do módulo de frontend parte 2 Labenu.
 - <a href="#tecnologias">Tecnolgias utilizadas</a>
 - <a href="pessoas-autoras">Pessoas autoras</a>
 - <a href="proximos-passos">Próximos passos</a>
+
+## Funcionalidades
+- [x] Captura dos pokemons para a pokedex
+- [x] Exclusão do pokemon da pokedex
+
+## Layout
+- ### Home
+![Home](./src/assets/readme/home_clip%20-%20Made%20with%20Clipchamp.gif)
+
+- ### Pokédex
+![Pokédex](./src/assets/readme/Pokedex%20-%20Made%20with%20Clipchamp.gif)
+
+- ### Detalhes
+![Detalhes](./src/assets/readme/Detalhes%20-%20Made%20with%20Clipchamp.gif)
