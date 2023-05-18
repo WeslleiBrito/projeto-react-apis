@@ -58,6 +58,9 @@ $ npm run start
 5. [Chakra-ui](https://chakra-ui.com/)
 
 ## Pessoas Autoras
+![foto](./src/assets/readme/foto.png)
+```
+```
 [Linkedin](https://www.linkedin.com/in/wesllei-brito-9222b9202/)
 
 ## Próximos passos
